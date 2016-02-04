@@ -47,26 +47,54 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login"
-                                                                   message:[self.userName text]
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"action"
-                                              style:UIAlertActionStyleDefault
-                                            handler:nil]];
-    
-    [self presentViewController:alert
-                       animated:true
-                     completion:nil];
     
     [[LoginWrapper sharedInstance] loginWithUser:self.userName.text
-                                     andPassword:self.password.text];
+                                     andPassword:self.password.text
+                           withCompletionHandler:^(BOOL succeed)
+    {
+        UIAlertController *alert;
+        if (succeed) {
+            alert = [UIAlertController alertControllerWithTitle:@"Login"
+                                                                           message:@"Te has \"logeado\" correctamente."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+        }
+        else {
+            alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                        message:@"El login no se ha podido completar."
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+        }
+        [alert addAction:[UIAlertAction actionWithTitle:@"ACEPTAR"
+                                                  style:UIAlertActionStyleDefault
+                                                handler:nil]];
+        [self presentViewController:alert
+                           animated:true
+                         completion:nil];
+    }];
 }
 
 - (IBAction)registerAction:(id)sender {
     [[SignupWrapper sharedInstance] registerWithUser:self.userName.text
-                                         andPassword:self.password.text];
-    
+                                         andPassword:self.password.text
+                               withCompletionHandler:^(BOOL succeed)
+    {
+        if (succeed) {
+            // USER IS REGISTERED
+            [self loginAction:sender];
+        }
+        else {
+            // REGISTRATION FAILED
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                           message:@"El registro no se ha podido completar."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"ACEPTAR"
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:nil]];
+            [self presentViewController:alert
+                               animated:true
+                             completion:nil];
+        }
+    }];
 }
 
 - (IBAction)facebookLoginAction:(id)sender {

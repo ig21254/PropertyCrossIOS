@@ -8,11 +8,13 @@
 
 #import "LoginWrapper.h"
 #import "LoginRequest.h"
+#import "LoginResponse.h"
 
 @implementation LoginWrapper
 
 - (void)loginWithUser:(NSString *)user
           andPassword:(NSString *)password
+withCompletionHandler:(void (^)(BOOL succeed))completionHandler
 {
     LoginRequest *loginRequest = [[LoginRequest alloc] init];
     loginRequest.username = user;
@@ -35,10 +37,13 @@
                                       {
                                           if (error) {
                                               NSLog(@"Error: %@", error);
+                                              completionHandler(false);
                                           }
                                           else {
                                               NSLog(@"Succeed: %@", responseObject);
+                                              completionHandler(true);
                                           }
+
                                       }];
     [dataTask resume];
 }

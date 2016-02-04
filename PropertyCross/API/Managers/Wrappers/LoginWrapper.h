@@ -13,7 +13,8 @@
 #pragma mark - Instance methods
 
 - (void)loginWithUser:(NSString *)user
-             andPassword:(NSString *)password;
+          andPassword:(NSString *)password
+withCompletionHandler:(void (^)(BOOL succeed))completionHandler;
 
 #pragma mark - Class methods
 

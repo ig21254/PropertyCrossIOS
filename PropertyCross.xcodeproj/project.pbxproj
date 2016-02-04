@@ -20,6 +20,7 @@
 		AF1932F51C63D0C6000CD53C /* SignupWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932F31C63D0C6000CD53C /* SignupWrapper.m */; };
 		AF1932F81C63D43B000CD53C /* LoginWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932F71C63D43B000CD53C /* LoginWrapper.m */; };
 		AF1932FB1C63D62A000CD53C /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FA1C63D62A000CD53C /* LoginRequest.m */; };
+		AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FE1C63E00A000CD53C /* LoginResponse.m */; };
 		AFFF04BB1C612E380090DD30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BA1C612E380090DD30 /* main.m */; };
 		AFFF04BE1C612E380090DD30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BD1C612E380090DD30 /* AppDelegate.m */; };
 		AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFF04DC1C61301D0090DD30 /* Main.storyboard */; };
@@ -60,6 +61,8 @@
 		AF1932F71C63D43B000CD53C /* LoginWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginWrapper.m; path = API/Managers/Wrappers/LoginWrapper.m; sourceTree = "<group>"; };
 		AF1932F91C63D62A000CD53C /* LoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequest.h; sourceTree = "<group>"; };
 		AF1932FA1C63D62A000CD53C /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
+		AF1932FD1C63E00A000CD53C /* LoginResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginResponse.h; path = API/Managers/Models/Responses/LoginResponse.h; sourceTree = "<group>"; };
+		AF1932FE1C63E00A000CD53C /* LoginResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginResponse.m; path = API/Managers/Models/Responses/LoginResponse.m; sourceTree = "<group>"; };
 		AFFF04B61C612E380090DD30 /* PropertyCross.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyCross.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF04BA1C612E380090DD30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFFF04BC1C612E380090DD30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +122,15 @@
 			);
 			name = Requests;
 			path = API/Managers/Models/Requests;
+			sourceTree = "<group>";
+		};
+		AF1932FC1C63DFD3000CD53C /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				AF1932FD1C63E00A000CD53C /* LoginResponse.h */,
+				AF1932FE1C63E00A000CD53C /* LoginResponse.m */,
+			);
+			name = Response;
 			sourceTree = "<group>";
 		};
 		AFFF04AD1C612E380090DD30 = {
@@ -236,6 +248,7 @@
 		AFFF04D81C612F710090DD30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF1932FC1C63DFD3000CD53C /* Response */,
 				AF1932E91C63D0B8000CD53C /* Requests */,
 				AFFF04EB1C614BAF0090DD30 /* Property.h */,
 				AFFF04EC1C614BAF0090DD30 /* Property.m */,
@@ -409,6 +422,7 @@
 				AF0D48BD1C6293B7006CBB1D /* SearchResultTableViewCell.m in Sources */,
 				AF0D48B31C627E23006CBB1D /* Comentario.m in Sources */,
 				AF1932F81C63D43B000CD53C /* LoginWrapper.m in Sources */,
+				AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */,
 				AF0D48B91C628F81006CBB1D /* SearchResultsViewController.m in Sources */,
 				AF1932F41C63D0C6000CD53C /* BaseWrapper.m in Sources */,
 				AF1932F51C63D0C6000CD53C /* SignupWrapper.m in Sources */,

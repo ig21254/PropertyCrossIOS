@@ -13,6 +13,7 @@
 
 - (void)registerWithUser:(NSString *)user
              andPassword:(NSString *)password
+   withCompletionHandler:(void (^)(BOOL succeed))completionHandler
 {
     RegisterRequest *registerRequest = [[RegisterRequest alloc] init];
     registerRequest.username = user;
@@ -33,9 +34,11 @@
                                       {
                                           if (error) {
                                               NSLog(@"Error: %@", error);
+                                              completionHandler(false);
                                           }
                                           else {
                                               NSLog(@"Succeed: %@", responseObject);
+                                              completionHandler(true);
                                           }
                                       }];
     [dataTask resume];
