@@ -21,27 +21,21 @@
     registerRequest.clientId = @"android";
     registerRequest.clientSecret = @"SomeRandomCharsAndNumbers";
     
-    NSMutableURLRequest *request = [super createRequestForService:@"register/signup"];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[registerRequest toJSONData]];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
+    NSMutableURLRequest *request = [super createRequestForService:@"register/signup" andHttpMethod:@"POST" andModel:registerRequest];
+                                    
     NSLog(@"request: %@", request);
     NSLog(@"registerRequest: %@", [registerRequest toJSONString]);
     
-    NSURLSessionDataTask *dataTask = [[self getSessionManager] dataTaskWithRequest:request
-                                                                 completionHandler:^(NSURLResponse *response, id responseObject, NSError *error)
-                                      {
-                                          if (error) {
-                                              NSLog(@"Error: %@", error);
-                                              completionHandler(false);
-                                          }
-                                          else {
-                                              NSLog(@"Succeed: %@", responseObject);
-                                              completionHandler(true);
-                                          }
-                                      }];
-    [dataTask resume];
+    [super runRequest:request withCompletionHandler:^(NSDictionary *response, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            completionHandler(false);
+        }
+        else {
+            NSLog(@"Succeed: %@", response);
+            completionHandler(true);
+        }
+    }];
 }
 
 #pragma mark - Class methods

@@ -23,29 +23,21 @@ withCompletionHandler:(void (^)(BOOL succeed))completionHandler
     loginRequest.clientSecret = @"SomeRandomCharsAndNumbers";
     loginRequest.grantType = @"password";
     
-    NSMutableURLRequest *request = [super createRequestForService:@"oauth/token"];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[loginRequest toJSONData]];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
+    NSMutableURLRequest *request = [super createRequestForService:@"oauth/token" andHttpMethod:@"POST" andModel:loginRequest];
     
     NSLog(@"request: %@", request);
     NSLog(@"loginRequest: %@", [loginRequest toJSONString]);
     
-    NSURLSessionDataTask *dataTask = [[self getSessionManager] dataTaskWithRequest:request
-                                                                 completionHandler:^(NSURLResponse *response, id responseObject, NSError *error)
-                                      {
-                                          if (error) {
-                                              NSLog(@"Error: %@", error);
-                                              completionHandler(false);
-                                          }
-                                          else {
-                                              NSLog(@"Succeed: %@", responseObject);
-                                              completionHandler(true);
-                                          }
-
-                                      }];
-    [dataTask resume];
+    [super runRequest:request withCompletionHandler:^(NSDictionary *response, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error);
+            completionHandler(false);
+        }
+        else {
+            NSLog(@"Succeed: %@", response);
+            completionHandler(true);
+        }
+    }];
 }
 
 #pragma mark - Class methods

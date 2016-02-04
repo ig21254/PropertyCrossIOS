@@ -21,6 +21,7 @@
 		AF1932F81C63D43B000CD53C /* LoginWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932F71C63D43B000CD53C /* LoginWrapper.m */; };
 		AF1932FB1C63D62A000CD53C /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FA1C63D62A000CD53C /* LoginRequest.m */; };
 		AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FE1C63E00A000CD53C /* LoginResponse.m */; };
+		AF1933031C63E900000CD53C /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1933021C63E900000CD53C /* UserDefaults.m */; };
 		AFFF04BB1C612E380090DD30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BA1C612E380090DD30 /* main.m */; };
 		AFFF04BE1C612E380090DD30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BD1C612E380090DD30 /* AppDelegate.m */; };
 		AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFF04DC1C61301D0090DD30 /* Main.storyboard */; };
@@ -63,6 +64,9 @@
 		AF1932FA1C63D62A000CD53C /* LoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequest.m; sourceTree = "<group>"; };
 		AF1932FD1C63E00A000CD53C /* LoginResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginResponse.h; path = API/Managers/Models/Responses/LoginResponse.h; sourceTree = "<group>"; };
 		AF1932FE1C63E00A000CD53C /* LoginResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginResponse.m; path = API/Managers/Models/Responses/LoginResponse.m; sourceTree = "<group>"; };
+		AF1933001C63E80C000CD53C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		AF1933011C63E900000CD53C /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
+		AF1933021C63E900000CD53C /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
 		AFFF04B61C612E380090DD30 /* PropertyCross.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyCross.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF04BA1C612E380090DD30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFFF04BC1C612E380090DD30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				AFFF04BA1C612E380090DD30 /* main.m */,
+				AF1933001C63E80C000CD53C /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,6 +182,8 @@
 		AFFF04D01C612F120090DD30 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AF1933011C63E900000CD53C /* UserDefaults.h */,
+				AF1933021C63E900000CD53C /* UserDefaults.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -419,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF1932EF1C63D0B8000CD53C /* RegisterRequest.m in Sources */,
+				AF1933031C63E900000CD53C /* UserDefaults.m in Sources */,
 				AF0D48BD1C6293B7006CBB1D /* SearchResultTableViewCell.m in Sources */,
 				AF0D48B31C627E23006CBB1D /* Comentario.m in Sources */,
 				AF1932F81C63D43B000CD53C /* LoginWrapper.m in Sources */,
@@ -530,6 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = ./PropertyCross/PrefixHeader.pch;
 				INFOPLIST_FILE = PropertyCross/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.lasalle.master.PropertyCross;
@@ -544,6 +553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = ./PropertyCross/PrefixHeader.pch;
 				INFOPLIST_FILE = PropertyCross/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.lasalle.master.PropertyCross;

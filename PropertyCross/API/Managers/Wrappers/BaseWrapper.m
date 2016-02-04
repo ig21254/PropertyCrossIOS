@@ -32,4 +32,35 @@
     return [NSMutableURLRequest requestWithURL:url];
 }
 
+
+- (NSMutableURLRequest *)createRequestForService:(NSString *)service
+                                   andHttpMethod:(NSString *)method
+                                        andModel:(JSONModel *)model
+{
+    NSMutableURLRequest *request = [self createRequestForService:service];
+    [request setHTTPMethod:method];
+    if (model) {
+        [request setHTTPBody:[model toJSONData]];
+        [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    }
+    
+    return request;
+}
+
+- (void)runRequest:(NSURLRequest *)request
+withCompletionHandler:(void (^)(NSDictionary *response, NSError *error))completionHandler
+{
+    NSURLSessionDataTask *dataTask = [[self getSessionManager] dataTaskWithRequest:request
+                                                                 completionHandler:^(NSURLResponse *response, id responseObject, NSError *error)
+                                      {
+                                          if (error) {
+                                              completionHandler(nil, error);
+                                          }
+                                          else {
+                                              completionHandler(responseObject, nil);
+                                          }
+                                      }];
+    [dataTask resume];
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JSONModel/JSONModel.h>
 
 #import "AFNetworking.h"
 
@@ -14,5 +15,12 @@
 
 - (AFURLSessionManager *)getSessionManager;
 - (NSMutableURLRequest *)createRequestForService:(NSString *)service;
+
+- (NSMutableURLRequest *)createRequestForService:(NSString *)service
+                                   andHttpMethod:(NSString *)method
+                                        andModel:(JSONModel *)model;
+
+- (void)runRequest:(NSURLRequest *)request
+withCompletionHandler:(void (^)(NSDictionary *response, NSError *error))completionHandler;
 
 @end
