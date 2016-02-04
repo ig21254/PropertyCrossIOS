@@ -14,9 +14,24 @@
 
 @implementation AppDelegate
 
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:(double)114/255
+                                                                  green:(double)167/255
+                                                                   blue:(double)0/255
+                                                                  alpha:1]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    [[UISwitch appearance] setTintColor:[UIColor colorWithRed:(double)114/255
+                                                       green:(double)167/255
+                                                        blue:(double)0/255
+                                                       alpha:1]];
+    [[UISwitch appearance] setOnTintColor:[UIColor colorWithRed:(double)114/255
+                                                          green:(double)167/255
+                                                           blue:(double)0/255
+                                                          alpha:1]];
+    
     return YES;
 }
 
