@@ -14,7 +14,7 @@
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
                                                        @"username": @"username",
-                                                       @"pwd": @"password",
+                                                       @"password": @"password",
                                                        @"grant_type": @"grantType",
                                                        @"client_id": @"clientId",
                                                        @"client_secret": @"clientSecret"
