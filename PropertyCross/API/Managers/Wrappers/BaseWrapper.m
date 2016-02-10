@@ -26,11 +26,14 @@
     return sessionManager;
 }
 
+
+
 - (NSMutableURLRequest *)createRequestForService:(NSString *)service
 {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", SERVICES_URL, service]];
     return [NSMutableURLRequest requestWithURL:url];
 }
+
 
 
 - (NSMutableURLRequest *)createRequestForService:(NSString *)service
@@ -46,6 +49,8 @@
     
     return request;
 }
+
+
 
 - (void)runRequest:(NSURLRequest *)request
 withCompletionHandler:(void (^)(NSDictionary *response, NSError *error))completionHandler

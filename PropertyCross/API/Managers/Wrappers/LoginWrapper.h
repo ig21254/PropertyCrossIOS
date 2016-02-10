@@ -7,6 +7,7 @@
 //
 
 #import "BaseWrapper.h"
+#import "LoginResponse.h"
 
 @interface LoginWrapper : BaseWrapper
 
@@ -14,7 +15,7 @@
 
 - (void)loginWithUser:(NSString *)user
           andPassword:(NSString *)password
-withCompletionHandler:(void (^)(BOOL succeed))completionHandler;
+withCompletionHandler:(void (^)(LoginResponse * loginResponse))completionHandler;
 
 #pragma mark - Class methods
 

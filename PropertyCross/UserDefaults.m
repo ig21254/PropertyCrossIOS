@@ -10,6 +10,16 @@
 
 @implementation UserDefaults
 
++ (void) storeAccessToken:(NSString *)accessToken {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:accessToken forKey:KEY_ACCESS_TOKEN];
+    [defaults synchronize];
+}
+
++ (NSString *) getAccessToken {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:KEY_ACCESS_TOKEN];
+}
 
 
 @end

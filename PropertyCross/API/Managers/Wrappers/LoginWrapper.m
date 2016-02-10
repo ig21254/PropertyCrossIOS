@@ -8,13 +8,13 @@
 
 #import "LoginWrapper.h"
 #import "LoginRequest.h"
-#import "LoginResponse.h"
+#import "UserDefaults.h"
 
 @implementation LoginWrapper
 
 - (void)loginWithUser:(NSString *)user
           andPassword:(NSString *)password
-withCompletionHandler:(void (^)(BOOL succeed))completionHandler
+withCompletionHandler:(void (^)(LoginResponse * loginResponse))completionHandler
 {
     LoginRequest *loginRequest = [[LoginRequest alloc] init];
     loginRequest.username = user;
@@ -35,7 +35,9 @@ withCompletionHandler:(void (^)(BOOL succeed))completionHandler
         }
         else {
             NSLog(@"Succeed: %@", response);
-            completionHandler(true);
+            [UserDefaults storeAccessToken:response[@"accessToken"]];
+            LoginResponse * loginResponse = [[LoginResponse alloc] initWithDictionary:response error:nil];
+            completionHandler(loginResponse);
         }
     }];
 }

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserDefaults : NSUserDefaults
+@interface UserDefaults : NSObject
+
+
++ (void) storeAccessToken:(NSString *)accessToken;
++ (NSString* ) getAccessToken;
 
 @end

@@ -10,4 +10,13 @@
 
 @implementation Foto
 
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"datos": @"datos",
+                                                       @"tipo": @"tipo"
+                                                       }];
+}
+
+
 @end

@@ -12,6 +12,7 @@
 
 @implementation LoginViewController
 
+
 #pragma mark - UITxtFieldDelegate implementation
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -46,17 +47,20 @@
                      completion:nil];
 }
 
+
+
 - (IBAction)loginAction:(id)sender {
     
     [[LoginWrapper sharedInstance] loginWithUser:self.userName.text
                                      andPassword:self.password.text
-                           withCompletionHandler:^(BOOL succeed)
+                           withCompletionHandler:^(LoginResponse * response)
     {
         UIAlertController *alert;
-        if (succeed) {
+        if (response) {
             alert = [UIAlertController alertControllerWithTitle:@"Login"
-                                                                           message:@"Te has \"logeado\" correctamente."
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
+                                                        message:@"Te has \"logeado\" correctamente."
+                                                 preferredStyle:UIAlertControllerStyleAlert];
+            [self.delegate didLogin];
         }
         else {
             alert = [UIAlertController alertControllerWithTitle:@"Error"

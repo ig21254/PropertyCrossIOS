@@ -10,4 +10,16 @@
 
 @implementation User
 
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"nombre": @"nombre",
+                                                       @"apellidos": @"apellidos",
+                                                       @"email": @"email",
+                                                       @"foto": @"foto",
+                                                       @"notificacion": @"notificacion"
+                                                       }];
+}
+
+
 @end

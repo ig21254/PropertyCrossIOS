@@ -9,6 +9,7 @@
 #import "SearchResultsViewController.h"
 #import "SearchResultTableViewCell.h"
 #import "Property.h"
+#import "UserDefaults.h"
 
 @interface SearchResultsViewController () <
 UITableViewDataSource,
@@ -20,6 +21,34 @@ UITableViewDelegate>
 
 
 @implementation SearchResultsViewController
+
+-(void)didLogin {
+    NSLog(@"HOLAAAA");
+    [self dismissViewControllerAnimated:false completion:nil];
+    [self performSegueWithIdentifier:@"goToProfileFromSearchResults" sender:self];
+    
+}
+
+
+- (IBAction)goToProfile:(id)sender {
+    if (![UserDefaults getAccessToken]) {
+        [self performSegueWithIdentifier:@"goToLoginFromSearchResults" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"goToProfileFromSearchResults" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"SEGUE = %@", segue.identifier);
+    if ([segue.identifier isEqualToString:@"goToLoginFromSearchResults"]) {
+        if (![UserDefaults getAccessToken]) {
+            LoginViewController *vc = segue.destinationViewController;
+            vc.delegate = self;
+        }
+    }
+}
+
 
 - (void) viewDidLoad
 {

@@ -10,4 +10,17 @@
 
 @implementation Notificacion
 
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"activa": @"activa",
+                                                       @"ciudad": @"ciudad",
+                                                       @"cp": @"cp",
+                                                       @"direccion": @"direccion",
+                                                       @"radio": @"radio",
+                                                       @"radioUnidad": @"radioUnidad"
+                                                       }];
+}
+
+
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoginViewProtocol.h"
+
+@protocol LoginViewProtocol <NSObject>
+
+@required
+- (void) didLogin;
+
+
+@end
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate>
 

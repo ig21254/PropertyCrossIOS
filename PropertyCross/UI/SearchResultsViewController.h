@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginViewController.h"
 
-@interface SearchResultsViewController : UIViewController
+@interface SearchResultsViewController : UIViewController<LoginViewProtocol>
 @end
