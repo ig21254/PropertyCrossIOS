@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
+#import "PropertyRequest.h"
 
 @interface SearchResultsViewController : UIViewController<LoginViewProtocol>
+
+@property (strong, nonatomic) PropertyRequest * searchRequest;
+
 @end

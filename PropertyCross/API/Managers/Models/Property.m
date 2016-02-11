@@ -10,5 +10,24 @@
 
 @implementation Property
 
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"alquiler": @"alquiler",
+                                                       @"anteriorConsulta": @"anteriorConsulta",
+                                                       @"ciudad": @"ciudad",
+                                                       @"comentarios": @"comentarios",
+                                                       @"cp": @"cp",
+                                                       @"descripcion": @"descripcion",
+                                                       @"direccion": @"direccion",
+                                                       @"emailPropietario": @"emailPropietario",
+                                                       @"telefonoPropietario": @"telefonoPropietario",
+                                                       @"titulo": @"titulo",
+                                                       @"latitud": @"latitud",
+                                                       @"longitud": @"longitud",
+                                                       @"metros": @"metros",
+                                                       @"precio": @"precio"
+                                                       }];
+}
 
 @end

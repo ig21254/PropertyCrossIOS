@@ -33,18 +33,6 @@
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Title"
-                                                                   message:@"message"
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"action"
-                                             style:UIAlertActionStyleDefault
-                                           handler:nil]];
-    
-    [self presentViewController:alert
-                       animated:true
-                     completion:nil];
 }
 
 

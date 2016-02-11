@@ -17,6 +17,7 @@
                                                        @"venta": @"venta",
                                                        @"latitud": @"latitud",
                                                        @"longitud": @"longitud",
+                                                       @"query": @"query"
                                                        }];
 }
 

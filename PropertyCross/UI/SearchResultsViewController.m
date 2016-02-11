@@ -23,7 +23,6 @@ UITableViewDelegate>
 @implementation SearchResultsViewController
 
 -(void)didLogin {
-    NSLog(@"HOLAAAA");
     [self dismissViewControllerAnimated:false completion:nil];
     [self performSegueWithIdentifier:@"goToProfileFromSearchResults" sender:self];
     
@@ -53,6 +52,8 @@ UITableViewDelegate>
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"request: %@", self.searchRequest);
     
     self.propiedades = [NSMutableArray array];
     for (int i = 0; i < 50; ++i) {

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0A0BD11C6D108100FA6278 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0A0BD01C6D108100FA6278 /* CoreDataManager.m */; };
+		AF0A0BD31C6D109000FA6278 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0A0BD21C6D109000FA6278 /* CoreData.framework */; };
+		AF0A0BD71C6D195C00FA6278 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF0A0BD51C6D195C00FA6278 /* PropertyCross.xcdatamodeld */; };
+		AF0A0BD91C6D1C7100FA6278 /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0A0BD81C6D1C7100FA6278 /* Location.png */; };
+		AF0A0BDB1C6D1C7F00FA6278 /* Location@2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0A0BDA1C6D1C7F00FA6278 /* Location@2.png */; };
+		AF0A0BDD1C6D1C9000FA6278 /* Location@3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0A0BDC1C6D1C9000FA6278 /* Location@3.png */; };
 		AF0D48AD1C627CC0006CBB1D /* Foto.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D48AC1C627CC0006CBB1D /* Foto.m */; };
 		AF0D48B01C627D6D006CBB1D /* Notificacion.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D48AF1C627D6D006CBB1D /* Notificacion.m */; };
 		AF0D48B31C627E23006CBB1D /* Comentario.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D48B21C627E23006CBB1D /* Comentario.m */; };
@@ -17,6 +23,7 @@
 		AF0D6A651C6A6CA2009ED006 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D6A641C6A6CA2009ED006 /* LocationManager.m */; };
 		AF0D6A681C6BBFBF009ED006 /* PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0D6A671C6BBFBF009ED006 /* PropertyWrapper.swift */; };
 		AF0D6A6B1C6BC4BC009ED006 /* PropertyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D6A6A1C6BC4BC009ED006 /* PropertyRequest.m */; };
+		AF0D6A6E1C6BCE0A009ED006 /* PropertySearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D6A6D1C6BCE0A009ED006 /* PropertySearchResponse.m */; };
 		AF13A0B91C69115B00AE5D7A /* ProfileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0B81C69115B00AE5D7A /* ProfileWrapper.m */; };
 		AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0C11C69245B00AE5D7A /* InfoResponse.m */; };
 		AF13A0CA1C692A1F00AE5D7A /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13A0C91C692A1F00AE5D7A /* Star.png */; };
@@ -50,6 +57,13 @@
 		1102C694BFF231EBA6307C99 /* libPods-PropertyCross.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PropertyCross.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2579AB275CF2813B665EB2AC /* Pods-PropertyCross.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyCross.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyCross/Pods-PropertyCross.release.xcconfig"; sourceTree = "<group>"; };
 		944F1E09DB0A2380AB5CAFCD /* Pods-PropertyCross.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyCross.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyCross/Pods-PropertyCross.debug.xcconfig"; sourceTree = "<group>"; };
+		AF0A0BCF1C6D108100FA6278 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		AF0A0BD01C6D108100FA6278 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		AF0A0BD21C6D109000FA6278 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AF0A0BD61C6D195C00FA6278 /* PropertyCross.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyCross.xcdatamodel; sourceTree = "<group>"; };
+		AF0A0BD81C6D1C7100FA6278 /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
+		AF0A0BDA1C6D1C7F00FA6278 /* Location@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location@2.png"; sourceTree = "<group>"; };
+		AF0A0BDC1C6D1C9000FA6278 /* Location@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location@3.png"; sourceTree = "<group>"; };
 		AF0D48AB1C627CC0006CBB1D /* Foto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Foto.h; path = API/Managers/Models/Foto.h; sourceTree = "<group>"; };
 		AF0D48AC1C627CC0006CBB1D /* Foto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Foto.m; path = API/Managers/Models/Foto.m; sourceTree = "<group>"; };
 		AF0D48AE1C627D6D006CBB1D /* Notificacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notificacion.h; path = API/Managers/Models/Notificacion.h; sourceTree = "<group>"; };
@@ -69,6 +83,8 @@
 		AF0D6A671C6BBFBF009ED006 /* PropertyWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PropertyWrapper.swift; path = API/Managers/Wrappers/PropertyWrapper.swift; sourceTree = "<group>"; };
 		AF0D6A691C6BC4BC009ED006 /* PropertyRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyRequest.h; sourceTree = "<group>"; };
 		AF0D6A6A1C6BC4BC009ED006 /* PropertyRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyRequest.m; sourceTree = "<group>"; };
+		AF0D6A6C1C6BCE0A009ED006 /* PropertySearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertySearchResponse.h; path = API/Managers/Models/Responses/PropertySearchResponse.h; sourceTree = "<group>"; };
+		AF0D6A6D1C6BCE0A009ED006 /* PropertySearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertySearchResponse.m; path = API/Managers/Models/Responses/PropertySearchResponse.m; sourceTree = "<group>"; };
 		AF13A0B71C69115B00AE5D7A /* ProfileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileWrapper.h; path = API/Managers/Wrappers/ProfileWrapper.h; sourceTree = "<group>"; };
 		AF13A0B81C69115B00AE5D7A /* ProfileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileWrapper.m; path = API/Managers/Wrappers/ProfileWrapper.m; sourceTree = "<group>"; };
 		AF13A0C01C69245B00AE5D7A /* InfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoResponse.h; path = API/Managers/Models/Responses/InfoResponse.h; sourceTree = "<group>"; };
@@ -120,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF0A0BD31C6D109000FA6278 /* CoreData.framework in Frameworks */,
 				AF13A0D91C69359500AE5D7A /* CoreLocation.framework in Frameworks */,
 				B1F502B1139B9B83FBA4321B /* libPods-PropertyCross.a in Frameworks */,
 			);
@@ -131,10 +148,19 @@
 		9B9320A9DB53C853A892F662 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF0A0BD21C6D109000FA6278 /* CoreData.framework */,
 				AF13A0D81C69359500AE5D7A /* CoreLocation.framework */,
 				1102C694BFF231EBA6307C99 /* libPods-PropertyCross.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF0A0BD41C6D18D200FA6278 /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				AF0A0BD51C6D195C00FA6278 /* PropertyCross.xcdatamodeld */,
+			);
+			name = Coredata;
 			sourceTree = "<group>";
 		};
 		AF0D48BA1C62936F006CBB1D /* Controls */ = {
@@ -170,6 +196,8 @@
 				AF1932FE1C63E00A000CD53C /* LoginResponse.m */,
 				AF13A0C01C69245B00AE5D7A /* InfoResponse.h */,
 				AF13A0C11C69245B00AE5D7A /* InfoResponse.m */,
+				AF0D6A6C1C6BCE0A009ED006 /* PropertySearchResponse.h */,
+				AF0D6A6D1C6BCE0A009ED006 /* PropertySearchResponse.m */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -228,6 +256,7 @@
 		AFFF04D11C612F1E0090DD30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AF0A0BD41C6D18D200FA6278 /* Coredata */,
 				AFFF04D51C612F4E0090DD30 /* Storyboards */,
 				AFFF04D41C612F450090DD30 /* Images */,
 			);
@@ -256,9 +285,12 @@
 		AFFF04D41C612F450090DD30 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF0A0BD81C6D1C7100FA6278 /* Location.png */,
+				AF0A0BDA1C6D1C7F00FA6278 /* Location@2.png */,
+				AF0A0BDC1C6D1C9000FA6278 /* Location@3.png */,
 				AF13A0D31C692B5D00AE5D7A /* Profile.png */,
-				AF13A0CF1C692B2D00AE5D7A /* Profile@3.png */,
 				AF13A0D11C692B4600AE5D7A /* Profile@2.png */,
+				AF13A0CF1C692B2D00AE5D7A /* Profile@3.png */,
 				AF13A0C91C692A1F00AE5D7A /* Star.png */,
 				AF13A0CB1C692A7800AE5D7A /* Star@2.png */,
 				AF13A0CD1C692A8F00AE5D7A /* Star@3.png */,
@@ -293,6 +325,8 @@
 		AFFF04D71C612F690090DD30 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				AF0A0BCF1C6D108100FA6278 /* CoreDataManager.h */,
+				AF0A0BD01C6D108100FA6278 /* CoreDataManager.m */,
 				AF0D6A631C6A6CA2009ED006 /* LocationManager.h */,
 				AF0D6A641C6A6CA2009ED006 /* LocationManager.m */,
 			);
@@ -415,12 +449,15 @@
 			files = (
 				AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */,
 				AF13A0CE1C692A8F00AE5D7A /* Star@3.png in Resources */,
+				AF0A0BD91C6D1C7100FA6278 /* Location.png in Resources */,
 				AFFF04E11C61306C0090DD30 /* App.xcassets in Resources */,
 				AF13A0CC1C692A7800AE5D7A /* Star@2.png in Resources */,
 				AF13A0D41C692B5D00AE5D7A /* Profile.png in Resources */,
 				AF13A0D01C692B2D00AE5D7A /* Profile@3.png in Resources */,
+				AF0A0BDB1C6D1C7F00FA6278 /* Location@2.png in Resources */,
 				AF0D48BF1C62940A006CBB1D /* SearchResultTableViewCell.xib in Resources */,
 				AF13A0CA1C692A1F00AE5D7A /* Star.png in Resources */,
+				AF0A0BDD1C6D1C9000FA6278 /* Location@3.png in Resources */,
 				AF13A0D21C692B4600AE5D7A /* Profile@2.png in Resources */,
 				AFFF04E81C6138C60090DD30 /* Splash.storyboard in Resources */,
 			);
@@ -496,11 +533,14 @@
 				AF1932EE1C63D0B8000CD53C /* BaseRequest.m in Sources */,
 				AF1932FB1C63D62A000CD53C /* LoginRequest.m in Sources */,
 				AFFF04F01C614F860090DD30 /* User.m in Sources */,
+				AF0D6A6E1C6BCE0A009ED006 /* PropertySearchResponse.m in Sources */,
 				AF0D6A681C6BBFBF009ED006 /* PropertyWrapper.swift in Sources */,
 				AF13A0B91C69115B00AE5D7A /* ProfileWrapper.m in Sources */,
 				AFFF04BE1C612E380090DD30 /* AppDelegate.m in Sources */,
 				AFFF04BB1C612E380090DD30 /* main.m in Sources */,
 				AF0D48AD1C627CC0006CBB1D /* Foto.m in Sources */,
+				AF0A0BD71C6D195C00FA6278 /* PropertyCross.xcdatamodeld in Sources */,
+				AF0A0BD11C6D108100FA6278 /* CoreDataManager.m in Sources */,
 				AFFF04ED1C614BAF0090DD30 /* Property.m in Sources */,
 				AF0D6A651C6A6CA2009ED006 /* LocationManager.m in Sources */,
 				AF0D48B01C627D6D006CBB1D /* Notificacion.m in Sources */,
@@ -651,6 +691,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF0A0BD51C6D195C00FA6278 /* PropertyCross.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF0A0BD61C6D195C00FA6278 /* PropertyCross.xcdatamodel */,
+			);
+			currentVersion = AF0A0BD61C6D195C00FA6278 /* PropertyCross.xcdatamodel */;
+			name = PropertyCross.xcdatamodeld;
+			path = Resources/PropertyCross.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AFFF04AE1C612E380090DD30 /* Project object */;
 }

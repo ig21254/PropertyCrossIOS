@@ -6,5 +6,6 @@
 target 'PropertyCross' do
 	pod 'JSONModel', '~>1.2.0'
 	pod 'AFNetworking', '~> 2.6'
+    pod 'SVProgressHUD'
 end
 

@@ -10,10 +10,11 @@
 
 @interface PropertyRequest : JSONModel
 
-@property (readwrite) BOOL * alquiler;
-@property (readwrite) BOOL * venta;
+@property (readwrite) BOOL alquiler;
+@property (readwrite) BOOL venta;
 @property (readwrite) double latitud;
 @property (readwrite) double longitud;
+@property (readwrite) NSString * query;
 
 
 @end

@@ -5,4 +5,5 @@
 #import "BaseWrapper.h"
 #import "Property.h"
 #import "PropertyRequest.h"
+#import "PropertySearchResponse.h"
 #import "UserDefaults.h"

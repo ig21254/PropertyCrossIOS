@@ -20,19 +20,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RB-Y0-9Fa">
-                                <rect key="frame" x="261" y="164" width="79" height="21"/>
+                                <rect key="frame" x="261" y="120" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPa-Io-wZa">
-                                <rect key="frame" x="263" y="231" width="74" height="21"/>
+                                <rect key="frame" x="263" y="187" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTK-YG-Q9Y">
-                                <rect key="frame" x="200" y="260" width="200" height="30"/>
+                                <rect key="frame" x="200" y="216" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="NvN-SA-ukt"/>
                                 </constraints>
@@ -41,14 +41,14 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQ5-Kv-qWS">
-                                <rect key="frame" x="281" y="298" width="38" height="30"/>
+                                <rect key="frame" x="281" y="254" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginAction:" destination="s6r-oh-EpO" eventType="touchUpInside" id="al0-2N-YpY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qge-aZ-D7Q">
-                                <rect key="frame" x="272" y="329" width="57" height="30"/>
+                                <rect key="frame" x="272" y="285" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerAction:" destination="s6r-oh-EpO" eventType="touchUpInside" id="4RI-Q6-VuA"/>
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBE-qp-K30">
-                                <rect key="frame" x="200" y="193" width="200" height="30"/>
+                                <rect key="frame" x="200" y="149" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="RUS-0k-dxe"/>
                                 </constraints>
@@ -349,20 +349,20 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-z5-6eZ">
-                                        <rect key="frame" x="8" y="101" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eia-z5-6eZ">
+                                        <rect key="frame" x="8" y="101" width="46" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="nGa-Yz-6pV"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="searchProperty:" destination="eYw-Xm-r1C" eventType="touchUpInside" id="jMe-vy-ZgB"/>
-                                        </connections>
+                                        <state key="normal" title="Button" image="Location.png"/>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eV-pd-t1C">
                                         <rect key="frame" x="62" y="101" width="530" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="searchProperty:WithQuery:" destination="eYw-Xm-r1C" eventType="primaryActionTriggered" id="m6r-nC-pg6"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1d-YB-bsX">
                                         <rect key="frame" x="8" y="46" width="584" height="3"/>
@@ -640,6 +640,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Location.png" width="22" height="22"/>
         <image name="Profile.png" width="22" height="22"/>
         <image name="Star.png" width="22" height="22"/>
     </resources>

@@ -11,4 +11,14 @@
 
 @implementation Comentario
 
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"autor": @"autor",
+                                                       @"fecha": @"fecha",
+                                                       @"texto": @"texto",
+                                                       @"video": @"video"
+                                                       }];
+}
+
 @end

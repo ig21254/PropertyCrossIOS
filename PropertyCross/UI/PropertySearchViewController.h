@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PropertyCross-Swift.h"
+
 
 @interface PropertySearchViewController : UIViewController
 
