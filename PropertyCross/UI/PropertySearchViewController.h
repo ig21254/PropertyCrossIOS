@@ -13,6 +13,7 @@
 
 @property (weak) IBOutlet UISwitch * swcEnVenta;
 @property (weak) IBOutlet UISwitch * swcEnAlquiler;
-@property (weak) IBOutlet UITextField * txtDireccion;
+@property (weak, readwrite) IBOutlet UITextField * txtDireccion;
+@property (weak, readwrite) IBOutlet UIButton * btnLocation;
 
 @end

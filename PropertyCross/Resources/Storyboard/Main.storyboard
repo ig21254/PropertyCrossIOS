@@ -355,13 +355,16 @@
                                             <constraint firstAttribute="width" constant="46" id="nGa-Yz-6pV"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="Location.png"/>
+                                        <connections>
+                                            <action selector="searchProperty:" destination="eYw-Xm-r1C" eventType="touchUpInside" id="Vag-j9-QR6"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6eV-pd-t1C">
                                         <rect key="frame" x="62" y="101" width="530" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         <connections>
-                                            <action selector="searchProperty:WithQuery:" destination="eYw-Xm-r1C" eventType="primaryActionTriggered" id="m6r-nC-pg6"/>
+                                            <action selector="searchProperty:" destination="eYw-Xm-r1C" eventType="primaryActionTriggered" id="CDl-5j-EfG"/>
                                         </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1d-YB-bsX">
@@ -511,6 +514,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Lii-TQ-kRN"/>
                     <connections>
+                        <outlet property="btnLocation" destination="Eia-z5-6eZ" id="8G8-Hc-DfU"/>
                         <outlet property="swcEnAlquiler" destination="Ztf-dY-EAQ" id="C2a-vk-yXd"/>
                         <outlet property="swcEnVenta" destination="dDr-Fe-rgX" id="jmr-V7-OCE"/>
                         <outlet property="txtDireccion" destination="6eV-pd-t1C" id="fXL-qj-9IU"/>
@@ -591,7 +595,7 @@
                         <rightBarButtonItems>
                             <barButtonItem image="Profile.png" id="Pf1-Md-Ml9">
                                 <connections>
-                                    <action selector="goToProfile:" destination="aEg-6K-TP4" id="v1M-dK-h5C"/>
+                                    <action selector="goToProfile:" destination="aEg-6K-TP4" id="SND-S2-hyA"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="Star.png" id="TXj-he-wf5"/>

@@ -25,7 +25,6 @@ UITableViewDelegate>
 -(void)didLogin {
     [self dismissViewControllerAnimated:false completion:nil];
     [self performSegueWithIdentifier:@"goToProfileFromSearchResults" sender:self];
-    
 }
 
 
@@ -57,7 +56,7 @@ UITableViewDelegate>
     
     self.propiedades = [NSMutableArray array];
     for (int i = 0; i < 50; ++i) {
-        NSLog(@"Property %d", i);
+        //NSLog(@"Property %d", i);
         Property * property = [[Property alloc] init];
         
         property.alquiler = i%2==0;

@@ -9,31 +9,42 @@
 #import "PropertySearchViewController.h"
 #import "SearchResultsViewController.h"
 #import "PropertyCross-Swift.h"
+#import "LocationManager.h"
+
+#define LOCATION_BUTTON_TAG 1
+#define TEXT_QUERY_TAG 2
 
 @implementation PropertySearchViewController
 
+- (void) viewDidLoad
+{
+    [self txtDireccion].tag = TEXT_QUERY_TAG;
+    [self btnLocation].tag = LOCATION_BUTTON_TAG;
+}
 
 - (IBAction)searchProperty:(id)sender
-                 WithQuery:(NSString *) query {
-    
-    
+{
     [self performSegueWithIdentifier:@"searchProperty" sender:sender];
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"searchProperty"]) {
-        BOOL enVenta = [[self swcEnVenta] isEnabled];
-        BOOL enAlquiler = [[self swcEnAlquiler] isEnabled];
-        NSString * query = [[self txtDireccion] text];
-        
         PropertyRequest * request = [[PropertyRequest alloc] init];
         request.alquiler = [[self swcEnAlquiler] isEnabled];
         request.venta = [[self swcEnVenta] isEnabled];
-        request.query = [[self txtDireccion] text];
-        
+        if ([sender isEqual:[self txtDireccion]]) {
+            request.query = [[self txtDireccion] text];
+        }
+        else if ([sender isEqual:[self btnLocation]]) {
+            LocationManager * locationManager = [LocationManager sharedInstance];
+            [locationManager getLocationWithCompetionHandler:^(CLLocation *location) {
+                request.latitud = location.coordinate.latitude;
+                request.longitud = location.coordinate.longitude;
+            }];
+        }
         SearchResultsViewController * srvc = segue.destinationViewController;
         srvc.searchRequest = request;
-        
     }
 }
 
