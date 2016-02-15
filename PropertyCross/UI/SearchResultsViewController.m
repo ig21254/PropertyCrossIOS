@@ -95,6 +95,7 @@ UITableViewDelegate>
         }
             
         cell.price.text = [NSString stringWithFormat:@"%.2f €", property.precio];
+        cell.footage.text = [NSString stringWithFormat:@"%.2f m2", property.metros];
     }
     
     return cell;
@@ -102,7 +103,7 @@ UITableViewDelegate>
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    return 130;
 }
 
 

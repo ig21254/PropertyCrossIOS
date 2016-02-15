@@ -14,5 +14,6 @@
 @property (weak) IBOutlet UILabel * title;
 @property (weak) IBOutlet UILabel * subtitle;
 @property (weak) IBOutlet UILabel * price;
+@property (weak) IBOutlet UILabel * footage;
 
 @end
