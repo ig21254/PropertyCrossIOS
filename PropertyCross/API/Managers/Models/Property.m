@@ -26,7 +26,8 @@
                                                        @"latitud": @"latitud",
                                                        @"longitud": @"longitud",
                                                        @"metros": @"metros",
-                                                       @"precio": @"precio"
+                                                       @"precio": @"precio",
+                                                       @"favorito": @"favorito"
                                                        }];
 }
 

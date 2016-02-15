@@ -12,22 +12,27 @@
 
 @end
 
+@protocol Property
+@end
+
 @interface Property : JSONModel
 
 @property (readwrite) BOOL alquiler;
-@property (readwrite) long anteriorConsulta;
-@property (strong, nonatomic) NSString *ciudad;
-@property (strong, nonatomic) NSArray<Comentario> *comentarios;
-@property (strong, nonatomic) NSString * cp;
-@property (strong, nonatomic) NSString * descripcion;
-@property (strong, nonatomic) NSString * direccion;
-@property (strong, nonatomic) NSString * emailPropietario;
-@property (strong, nonatomic) NSString * telefonoPropietario;
+@property (strong, nonatomic) NSNumber<Optional> * anteriorConsulta;
 @property (strong, nonatomic) NSString * titulo;
 @property (readwrite) double latitud;
 @property (readwrite) double longitud;
 @property (readwrite) double metros;
 @property (readwrite) double precio;
+
+@property (strong, nonatomic) NSNumber<Optional> * favorito;
+@property (strong, nonatomic) NSString<Optional> * ciudad;
+@property (strong, nonatomic) NSArray<Comentario, Optional> *comentarios;
+@property (strong, nonatomic) NSString<Optional> * cp;
+@property (strong, nonatomic) NSString<Optional> * descripcion;
+@property (strong, nonatomic) NSString<Optional> * direccion;
+@property (strong, nonatomic) NSString<Optional> * emailPropietario;
+@property (strong, nonatomic) NSString<Optional> * telefonoPropietario;
 
 
 @end

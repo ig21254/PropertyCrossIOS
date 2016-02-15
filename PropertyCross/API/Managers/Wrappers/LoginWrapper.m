@@ -34,8 +34,9 @@ withCompletionHandler:(void (^)(LoginResponse * loginResponse))completionHandler
             completionHandler(false);
         }
         else {
-            NSLog(@"Succeed: %@", response);
-            [UserDefaults storeAccessToken:response[@"accessToken"]];
+            //NSLog(@"Succeed: %@", response[@"access_token"]);
+            //NSLog(@"Succeed: %@", response);
+            [UserDefaults storeAccessToken:response[@"access_token"]];
             LoginResponse * loginResponse = [[LoginResponse alloc] initWithDictionary:response error:nil];
             completionHandler(loginResponse);
         }

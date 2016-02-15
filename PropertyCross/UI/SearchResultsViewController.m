@@ -10,6 +10,8 @@
 #import "SearchResultTableViewCell.h"
 #import "Property.h"
 #import "UserDefaults.h"
+#import "PropertyCross-Swift.h"
+#import "SVProgressHUD.h"
 
 @interface SearchResultsViewController () <
 UITableViewDataSource,
@@ -22,7 +24,7 @@ UITableViewDelegate>
 
 @implementation SearchResultsViewController
 
--(void)didLogin {
+- (void)didLogin {
     [self dismissViewControllerAnimated:false completion:nil];
     [self performSegueWithIdentifier:@"goToProfileFromSearchResults" sender:self];
 }
@@ -47,38 +49,26 @@ UITableViewDelegate>
     }
 }
 
-
-- (void) viewDidLoad
+- (void) viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear:animated];
     
-    NSLog(@"request: %@", self.searchRequest);
-    
-    self.propiedades = [NSMutableArray array];
-    for (int i = 0; i < 50; ++i) {
-        //NSLog(@"Property %d", i);
-        Property * property = [[Property alloc] init];
+    //NSLog(@"request: %@", self.searchRequest);
+    [SVProgressHUD show];
+    PropertyWrapper * propertyWrapper = [PropertyWrapper sharedInstance];
+    [propertyWrapper searchPropertyWithRequest:[self searchRequest] completionHandler:^(PropertySearchResponse * response) {
+        //NSLog(@"%@ (%lu)",response.datos, (unsigned long)[response.datos count]);
         
-        property.alquiler = i%2==0;
-        property.anteriorConsulta = 0;
-        property.ciudad = @"Barcelona";
-        property.cp = [NSString stringWithFormat:@"080%.2d", i];
-        property.descripcion = @"Lorem ipsum";
-        property.direccion = [NSString stringWithFormat:@"Ciudad %d", i];
-        property.emailPropietario = [NSString stringWithFormat:@"email%d@gmail.com", i];
-        property.telefonoPropietario = [NSString stringWithFormat:@"6006060%.2d", i];
-        property.titulo = [NSString stringWithFormat:@"Titulo %d", i];
-        property.longitud = i + 0.2345;
-        property.latitud = i + 1.4561;
-        property.precio = 1000 - 1000 % (i+1);
-        property.metros = 50 + i;
-        
-        [self.propiedades addObject:property];
-    }
+        self.propiedades = [response.datos mutableCopy];
+        //NSLog(@"Propiedades: %@", self.propiedades);
+        [SVProgressHUD dismiss];
+        [self.tableView reloadData];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"NumberOfRows: %@ (%lu)", self.propiedades, [self.propiedades count]);
     return [self.propiedades count];
 }
 
@@ -92,13 +82,20 @@ UITableViewDelegate>
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SearchResultTableViewCell"
                                              owner:self
                                             options:0] firstObject];
+
+        Property * property = [self.propiedades objectAtIndex:indexPath.row];
         
-        NSLog(@"Parsing %ld.", indexPath.row);
-        cell.title.text = [self.propiedades objectAtIndex:indexPath.row].titulo;
-        cell.subtitle.text = [self.propiedades objectAtIndex:indexPath.row].direccion;
+        cell.title.text = property.titulo;
+        
+        if (property.alquiler) {
+            cell.subtitle.text = @"en alquiler";
+        }
+        else {
+            cell.subtitle.text = @"en venta";
+        }
+            
+        cell.price.text = [NSString stringWithFormat:@"%.2f €", property.precio];
     }
-    
-    
     
     return cell;
 }

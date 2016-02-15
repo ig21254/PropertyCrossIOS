@@ -13,5 +13,6 @@
 @interface SearchResultsViewController : UIViewController<LoginViewProtocol>
 
 @property (strong, nonatomic) PropertyRequest * searchRequest;
+@property (strong, nonatomic) IBOutlet UITableView * tableView;
 
 @end

@@ -519,6 +519,7 @@
                         <outlet property="swcEnVenta" destination="dDr-Fe-rgX" id="jmr-V7-OCE"/>
                         <outlet property="txtDireccion" destination="6eV-pd-t1C" id="fXL-qj-9IU"/>
                         <segue destination="aEg-6K-TP4" kind="show" identifier="searchProperty" id="Vi1-Et-vqi"/>
+                        <segue destination="s6r-oh-EpO" kind="presentation" identifier="goToLoginFromPropertySearch" id="6US-z1-GFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqF-0M-UFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,6 +603,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="EHB-no-ZxI" id="Vio-e8-d2F"/>
                         <segue destination="5B4-le-4aS" kind="presentation" identifier="goToProfileFromSearchResults" id="fwJ-ep-D5A"/>
                         <segue destination="s6r-oh-EpO" kind="presentation" identifier="goToLoginFromSearchResults" id="cKH-MD-OIT"/>
                     </connections>
