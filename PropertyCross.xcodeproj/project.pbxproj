@@ -34,6 +34,12 @@
 		AF13A0D41C692B5D00AE5D7A /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = AF13A0D31C692B5D00AE5D7A /* Profile.png */; };
 		AF13A0D71C69304C00AE5D7A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */; };
 		AF13A0D91C69359500AE5D7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF13A0D81C69359500AE5D7A /* CoreLocation.framework */; };
+		AF13F9B31C738AFF0015779F /* apartment1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF13F9AF1C738AFF0015779F /* apartment1.jpg */; };
+		AF13F9B41C738AFF0015779F /* apartment2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF13F9B01C738AFF0015779F /* apartment2.jpg */; };
+		AF13F9B51C738AFF0015779F /* apartment3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF13F9B11C738AFF0015779F /* apartment3.jpg */; };
+		AF13F9B61C738AFF0015779F /* apartment4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF13F9B21C738AFF0015779F /* apartment4.jpg */; };
+		AF13F9BB1C73926D0015779F /* Search+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13F9B81C73926D0015779F /* Search+CoreDataProperties.m */; };
+		AF13F9BC1C73926D0015779F /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13F9BA1C73926D0015779F /* Search.m */; };
 		AF1932EE1C63D0B8000CD53C /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932EB1C63D0B8000CD53C /* BaseRequest.m */; };
 		AF1932EF1C63D0B8000CD53C /* RegisterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932ED1C63D0B8000CD53C /* RegisterRequest.m */; };
 		AF1932F41C63D0C6000CD53C /* BaseWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932F11C63D0C6000CD53C /* BaseWrapper.m */; };
@@ -98,6 +104,15 @@
 		AF13A0D51C69304C00AE5D7A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = UI/ProfileViewController.h; sourceTree = "<group>"; };
 		AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = UI/ProfileViewController.m; sourceTree = "<group>"; };
 		AF13A0D81C69359500AE5D7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AF13F9AF1C738AFF0015779F /* apartment1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = apartment1.jpg; path = Resources/Images/apartment1.jpg; sourceTree = "<group>"; };
+		AF13F9B01C738AFF0015779F /* apartment2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = apartment2.jpg; path = Resources/Images/apartment2.jpg; sourceTree = "<group>"; };
+		AF13F9B11C738AFF0015779F /* apartment3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = apartment3.jpg; path = Resources/Images/apartment3.jpg; sourceTree = "<group>"; };
+		AF13F9B21C738AFF0015779F /* apartment4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = apartment4.jpg; path = Resources/Images/apartment4.jpg; sourceTree = "<group>"; };
+		AF13F9B71C73926D0015779F /* Search+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Search+CoreDataProperties.h"; path = "API/Managers/Models/Requests/Search+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AF13F9B81C73926D0015779F /* Search+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Search+CoreDataProperties.m"; path = "API/Managers/Models/Requests/Search+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AF13F9B91C73926D0015779F /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Search.h; path = API/Managers/Models/Requests/Search.h; sourceTree = "<group>"; };
+		AF13F9BA1C73926D0015779F /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Search.m; path = API/Managers/Models/Requests/Search.m; sourceTree = "<group>"; };
+		AF13F9BE1C73A3890015779F /* PropertyCross 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PropertyCross 2.xcdatamodel"; sourceTree = "<group>"; };
 		AF1932EA1C63D0B8000CD53C /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
 		AF1932EB1C63D0B8000CD53C /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
 		AF1932EC1C63D0B8000CD53C /* RegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterRequest.h; sourceTree = "<group>"; };
@@ -171,6 +186,17 @@
 				AF0D48BE1C62940A006CBB1D /* SearchResultTableViewCell.xib */,
 			);
 			name = Controls;
+			sourceTree = "<group>";
+		};
+		AF13F9BD1C73928C0015779F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				AF13F9B71C73926D0015779F /* Search+CoreDataProperties.h */,
+				AF13F9B81C73926D0015779F /* Search+CoreDataProperties.m */,
+				AF13F9B91C73926D0015779F /* Search.h */,
+				AF13F9BA1C73926D0015779F /* Search.m */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		AF1932E91C63D0B8000CD53C /* Requests */ = {
@@ -285,6 +311,10 @@
 		AFFF04D41C612F450090DD30 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF13F9AF1C738AFF0015779F /* apartment1.jpg */,
+				AF13F9B01C738AFF0015779F /* apartment2.jpg */,
+				AF13F9B11C738AFF0015779F /* apartment3.jpg */,
+				AF13F9B21C738AFF0015779F /* apartment4.jpg */,
 				AF0A0BD81C6D1C7100FA6278 /* Location.png */,
 				AF0A0BDA1C6D1C7F00FA6278 /* Location@2.png */,
 				AF0A0BDC1C6D1C9000FA6278 /* Location@3.png */,
@@ -336,6 +366,7 @@
 		AFFF04D81C612F710090DD30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF13F9BD1C73928C0015779F /* Entities */,
 				AF1932FC1C63DFD3000CD53C /* Response */,
 				AF1932E91C63D0B8000CD53C /* Requests */,
 				AFFF04EB1C614BAF0090DD30 /* Property.h */,
@@ -448,15 +479,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */,
+				AF13F9B61C738AFF0015779F /* apartment4.jpg in Resources */,
 				AF13A0CE1C692A8F00AE5D7A /* Star@3.png in Resources */,
+				AF13F9B41C738AFF0015779F /* apartment2.jpg in Resources */,
 				AF0A0BD91C6D1C7100FA6278 /* Location.png in Resources */,
 				AFFF04E11C61306C0090DD30 /* App.xcassets in Resources */,
+				AF13F9B31C738AFF0015779F /* apartment1.jpg in Resources */,
 				AF13A0CC1C692A7800AE5D7A /* Star@2.png in Resources */,
 				AF13A0D41C692B5D00AE5D7A /* Profile.png in Resources */,
 				AF13A0D01C692B2D00AE5D7A /* Profile@3.png in Resources */,
 				AF0A0BDB1C6D1C7F00FA6278 /* Location@2.png in Resources */,
 				AF0D48BF1C62940A006CBB1D /* SearchResultTableViewCell.xib in Resources */,
 				AF13A0CA1C692A1F00AE5D7A /* Star.png in Resources */,
+				AF13F9B51C738AFF0015779F /* apartment3.jpg in Resources */,
 				AF0A0BDD1C6D1C9000FA6278 /* Location@3.png in Resources */,
 				AF13A0D21C692B4600AE5D7A /* Profile@2.png in Resources */,
 				AFFF04E81C6138C60090DD30 /* Splash.storyboard in Resources */,
@@ -545,7 +580,9 @@
 				AF0D6A651C6A6CA2009ED006 /* LocationManager.m in Sources */,
 				AF0D48B01C627D6D006CBB1D /* Notificacion.m in Sources */,
 				AFFF04E41C6132C00090DD30 /* LoginViewController.m in Sources */,
+				AF13F9BC1C73926D0015779F /* Search.m in Sources */,
 				AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */,
+				AF13F9BB1C73926D0015779F /* Search+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,9 +733,10 @@
 		AF0A0BD51C6D195C00FA6278 /* PropertyCross.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AF13F9BE1C73A3890015779F /* PropertyCross 2.xcdatamodel */,
 				AF0A0BD61C6D195C00FA6278 /* PropertyCross.xcdatamodel */,
 			);
-			currentVersion = AF0A0BD61C6D195C00FA6278 /* PropertyCross.xcdatamodel */;
+			currentVersion = AF13F9BE1C73A3890015779F /* PropertyCross 2.xcdatamodel */;
 			name = PropertyCross.xcdatamodeld;
 			path = Resources/PropertyCross.xcdatamodeld;
 			sourceTree = "<group>";

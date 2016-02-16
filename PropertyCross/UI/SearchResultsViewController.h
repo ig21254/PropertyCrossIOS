@@ -14,5 +14,6 @@
 
 @property (strong, nonatomic) PropertyRequest * searchRequest;
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
+@property (weak) IBOutlet UISegmentedControl * segmentedControl;
 
 @end

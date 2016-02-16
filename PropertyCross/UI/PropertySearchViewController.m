@@ -10,13 +10,18 @@
 #import "SearchResultsViewController.h"
 #import "LocationManager.h"
 #import "UserDefaults.h"
+#import "Search.h"
 
 #define LOCATION_BUTTON_TAG 1
 #define TEXT_QUERY_TAG 2
 
-@interface PropertySearchViewController ()<LoginViewProtocol>
+@interface PropertySearchViewController ()<
+LoginViewProtocol,
+UITableViewDataSource,
+UITableViewDelegate>
 
 @property (strong, nonatomic) id sender;
+@property (strong, nonatomic) NSArray<Search *> * recentSearches;
 
 @end
 
@@ -27,7 +32,16 @@
 {
     [self txtDireccion].tag = TEXT_QUERY_TAG;
     [self btnLocation].tag = LOCATION_BUTTON_TAG;
+
+    self.recentSearches = [Search getRecentSearches];
 }
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    self.recentSearches = [Search getRecentSearches];
+    [self.tableView reloadData];
+}
+
 
 - (IBAction)searchProperty:(id)sender
 {
@@ -74,6 +88,32 @@
             vc.delegate = self;
         }
     }
+}
+
+
+#pragma TableView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.recentSearches count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
+    
+    Search * search = [self.recentSearches objectAtIndex:indexPath.row];
+    cell.textLabel.text = search.query;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ resultados", search.num_results];
+    
+    return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
 }
 
 @end

@@ -6,9 +6,10 @@
         <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="num_results" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="query" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="venta" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Search" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Search" positionX="-63" positionY="-18" width="128" height="150"/>
     </elements>
 </model>

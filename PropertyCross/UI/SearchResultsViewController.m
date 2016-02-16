@@ -12,12 +12,14 @@
 #import "UserDefaults.h"
 #import "PropertyCross-Swift.h"
 #import "SVProgressHUD.h"
+#import "Search.h"
 
 @interface SearchResultsViewController () <
 UITableViewDataSource,
 UITableViewDelegate>
 
-@property (strong, nonatomic) NSMutableArray<Property *> * propiedades;
+@property (strong, nonatomic) NSArray<Property *> * propiedades;
+@property (strong, nonatomic) NSArray<Property *> * originalProperties;
 
 @end
 
@@ -53,32 +55,46 @@ UITableViewDelegate>
 {
     [super viewDidAppear:animated];
     
-    //NSLog(@"request: %@", self.searchRequest);
     [SVProgressHUD show];
     PropertyWrapper * propertyWrapper = [PropertyWrapper sharedInstance];
     [propertyWrapper searchPropertyWithRequest:[self searchRequest] completionHandler:^(PropertySearchResponse * response) {
-        //NSLog(@"%@ (%lu)",response.datos, (unsigned long)[response.datos count]);
         
-        self.propiedades = [response.datos mutableCopy];
-        //NSLog(@"Propiedades: %@", self.propiedades);
+        if (response.criterio.query != nil) {
+            [Search storeSearchWithPropertyResponse:response];
+        }
+        
+        self.originalProperties = [response.datos mutableCopy];
+        self.propiedades = self.originalProperties;
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
     }];
 }
 
+- (IBAction)decodeButton:(id)sender {
+    
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        self.propiedades = self.originalProperties;
+    } else if(self.segmentedControl.selectedSegmentIndex == 1) {
+        self.propiedades = [self.originalProperties filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"alquiler=true"]];
+    } else if(self.segmentedControl.selectedSegmentIndex == 2) {
+        self.propiedades = [self.originalProperties filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"alquiler=false"]];
+    }
+    
+    [self.tableView reloadData];
+}
+
+
+#pragma TABLE VIEW
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"NumberOfRows: %@ (%lu)", self.propiedades, [self.propiedades count]);
     return [self.propiedades count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Try to dequeue an existing cell
     SearchResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-        //                              reuseIdentifier:@"cell"];
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SearchResultTableViewCell"
                                              owner:self
                                             options:0] firstObject];
@@ -96,6 +112,9 @@ UITableViewDelegate>
             
         cell.price.text = [NSString stringWithFormat:@"%.2f €", property.precio];
         cell.footage.text = [NSString stringWithFormat:@"%.2f m2", property.metros];
+        
+        cell.image.contentMode = UIViewContentModeScaleAspectFit;
+        cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"apartment%d.jpg", arc4random_uniform(4)+1]];
     }
     
     return cell;

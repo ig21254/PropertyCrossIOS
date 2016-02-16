@@ -15,5 +15,6 @@
 @property (weak) IBOutlet UISwitch * swcEnAlquiler;
 @property (weak, readwrite) IBOutlet UITextField * txtDireccion;
 @property (weak, readwrite) IBOutlet UIButton * btnLocation;
+@property (weak) IBOutlet UITableView * tableView;
 
 @end
