@@ -14,12 +14,18 @@
 #import "SVProgressHUD.h"
 #import "Search.h"
 
+#define SORT_BY_PRICE_ASC    @"SORT_BY_PRICE_ASC"
+#define SORT_BY_PRICE_DESC   @"SORT_BY_PRICE_DESC"
+#define SORT_BY_FOOTAGE_ASC  @"SORT_BY_FOOTAGE_ASC"
+#define SORT_BY_FOOTAGE_DESC @"SORT_BY_FOOTAGE_DESC"
+
 @interface SearchResultsViewController () <
 UITableViewDataSource,
 UITableViewDelegate>
 
 @property (strong, nonatomic) NSArray<Property *> * propiedades;
 @property (strong, nonatomic) NSArray<Property *> * originalProperties;
+@property (strong, nonatomic) NSString * sorting;
 
 @end
 
@@ -55,6 +61,8 @@ UITableViewDelegate>
 {
     [super viewDidAppear:animated];
     
+    self.sorting = @"NONE";
+    
     [SVProgressHUD show];
     PropertyWrapper * propertyWrapper = [PropertyWrapper sharedInstance];
     [propertyWrapper searchPropertyWithRequest:[self searchRequest] completionHandler:^(PropertySearchResponse * response) {
@@ -81,6 +89,27 @@ UITableViewDelegate>
     }
     
     [self.tableView reloadData];
+}
+
+
+- (IBAction)sortPropertyResults:(id)sender
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sorting Results"
+                                                                   message:@"Choose order to sort the results"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"By price"
+                                                          style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button one");
+                                                          }]; // 2
+    UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"By footage"
+                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                                                               NSLog(@"You pressed button two");
+                                                           }]; // 3
+    
+    [alert addAction:firstAction]; // 4
+    [alert addAction:secondAction]; // 5
+    
+    [self presentViewController:alert animated:YES completion:nil]; // 6
 }
 
 

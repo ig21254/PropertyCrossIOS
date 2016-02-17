@@ -50,6 +50,9 @@
 		AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */; };
 		AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */; };
 		AFB4C81E1C750DA6000D49B0 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81C1C750DA6000D49B0 /* UserData.m */; };
+		AFB4C8201C751282000D49B0 /* sort@3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB4C81F1C751282000D49B0 /* sort@3.png */; };
+		AFB4C8221C7512A3000D49B0 /* sort@2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB4C8211C7512A3000D49B0 /* sort@2.png */; };
+		AFB4C8241C7512B7000D49B0 /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB4C8231C7512B7000D49B0 /* sort.png */; };
 		AFFF04BB1C612E380090DD30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BA1C612E380090DD30 /* main.m */; };
 		AFFF04BE1C612E380090DD30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BD1C612E380090DD30 /* AppDelegate.m */; };
 		AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFF04DC1C61301D0090DD30 /* Main.storyboard */; };
@@ -136,6 +139,9 @@
 		AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserData+CoreDataProperties.m"; path = "API/Managers/Models/Requests/UserData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		AFB4C81B1C750DA6000D49B0 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserData.h; path = API/Managers/Models/Requests/UserData.h; sourceTree = "<group>"; };
 		AFB4C81C1C750DA6000D49B0 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserData.m; path = API/Managers/Models/Requests/UserData.m; sourceTree = "<group>"; };
+		AFB4C81F1C751282000D49B0 /* sort@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort@3.png"; sourceTree = "<group>"; };
+		AFB4C8211C7512A3000D49B0 /* sort@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort@2.png"; sourceTree = "<group>"; };
+		AFB4C8231C7512B7000D49B0 /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
 		AFFF04B61C612E380090DD30 /* PropertyCross.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyCross.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF04BA1C612E380090DD30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFFF04BC1C612E380090DD30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -321,6 +327,9 @@
 		AFFF04D41C612F450090DD30 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AFB4C8231C7512B7000D49B0 /* sort.png */,
+				AFB4C8211C7512A3000D49B0 /* sort@2.png */,
+				AFB4C81F1C751282000D49B0 /* sort@3.png */,
 				AF13F9AF1C738AFF0015779F /* apartment1.jpg */,
 				AF13F9B01C738AFF0015779F /* apartment2.jpg */,
 				AF13F9B11C738AFF0015779F /* apartment3.jpg */,
@@ -488,13 +497,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFB4C8241C7512B7000D49B0 /* sort.png in Resources */,
 				AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */,
 				AF13F9B61C738AFF0015779F /* apartment4.jpg in Resources */,
+				AFB4C8201C751282000D49B0 /* sort@3.png in Resources */,
 				AF13A0CE1C692A8F00AE5D7A /* Star@3.png in Resources */,
 				AF13F9B41C738AFF0015779F /* apartment2.jpg in Resources */,
 				AF0A0BD91C6D1C7100FA6278 /* Location.png in Resources */,
 				AFFF04E11C61306C0090DD30 /* App.xcassets in Resources */,
 				AF13F9B31C738AFF0015779F /* apartment1.jpg in Resources */,
+				AFB4C8221C7512A3000D49B0 /* sort@2.png in Resources */,
 				AF13A0CC1C692A7800AE5D7A /* Star@2.png in Resources */,
 				AF13A0D41C692B5D00AE5D7A /* Profile.png in Resources */,
 				AF13A0D01C692B2D00AE5D7A /* Profile@3.png in Resources */,

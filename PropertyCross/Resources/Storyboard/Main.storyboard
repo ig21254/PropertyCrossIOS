@@ -648,6 +648,11 @@
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="Star.png" id="TXj-he-wf5"/>
+                            <barButtonItem image="sort.png" id="CgV-2C-L6L">
+                                <connections>
+                                    <action selector="sortPropertyResults:" destination="aEg-6K-TP4" id="Xa6-Jd-r2A"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -698,10 +703,11 @@
         <image name="Location.png" width="22" height="22"/>
         <image name="Profile.png" width="22" height="22"/>
         <image name="Star.png" width="22" height="22"/>
+        <image name="sort.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cKH-MD-OIT"/>
-        <segue reference="Vqm-93-i3y"/>
+        <segue reference="uws-e7-F08"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
