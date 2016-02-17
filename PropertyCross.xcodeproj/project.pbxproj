@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AF0A0BD11C6D108100FA6278 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0A0BD01C6D108100FA6278 /* CoreDataManager.m */; };
 		AF0A0BD31C6D109000FA6278 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0A0BD21C6D109000FA6278 /* CoreData.framework */; };
-		AF0A0BD71C6D195C00FA6278 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF0A0BD51C6D195C00FA6278 /* PropertyCross.xcdatamodeld */; };
 		AF0A0BD91C6D1C7100FA6278 /* Location.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0A0BD81C6D1C7100FA6278 /* Location.png */; };
 		AF0A0BDB1C6D1C7F00FA6278 /* Location@2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0A0BDA1C6D1C7F00FA6278 /* Location@2.png */; };
 		AF0A0BDD1C6D1C9000FA6278 /* Location@3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0A0BDC1C6D1C9000FA6278 /* Location@3.png */; };
@@ -48,6 +47,9 @@
 		AF1932FB1C63D62A000CD53C /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FA1C63D62A000CD53C /* LoginRequest.m */; };
 		AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FE1C63E00A000CD53C /* LoginResponse.m */; };
 		AF1933031C63E900000CD53C /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1933021C63E900000CD53C /* UserDefaults.m */; };
+		AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */; };
+		AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */; };
+		AFB4C81E1C750DA6000D49B0 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81C1C750DA6000D49B0 /* UserData.m */; };
 		AFFF04BB1C612E380090DD30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BA1C612E380090DD30 /* main.m */; };
 		AFFF04BE1C612E380090DD30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BD1C612E380090DD30 /* AppDelegate.m */; };
 		AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFF04DC1C61301D0090DD30 /* Main.storyboard */; };
@@ -66,7 +68,6 @@
 		AF0A0BCF1C6D108100FA6278 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		AF0A0BD01C6D108100FA6278 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		AF0A0BD21C6D109000FA6278 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		AF0A0BD61C6D195C00FA6278 /* PropertyCross.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyCross.xcdatamodel; sourceTree = "<group>"; };
 		AF0A0BD81C6D1C7100FA6278 /* Location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Location.png; sourceTree = "<group>"; };
 		AF0A0BDA1C6D1C7F00FA6278 /* Location@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location@2.png"; sourceTree = "<group>"; };
 		AF0A0BDC1C6D1C9000FA6278 /* Location@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Location@3.png"; sourceTree = "<group>"; };
@@ -112,7 +113,6 @@
 		AF13F9B81C73926D0015779F /* Search+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Search+CoreDataProperties.m"; path = "API/Managers/Models/Requests/Search+CoreDataProperties.m"; sourceTree = "<group>"; };
 		AF13F9B91C73926D0015779F /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Search.h; path = API/Managers/Models/Requests/Search.h; sourceTree = "<group>"; };
 		AF13F9BA1C73926D0015779F /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Search.m; path = API/Managers/Models/Requests/Search.m; sourceTree = "<group>"; };
-		AF13F9BE1C73A3890015779F /* PropertyCross 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PropertyCross 2.xcdatamodel"; sourceTree = "<group>"; };
 		AF1932EA1C63D0B8000CD53C /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
 		AF1932EB1C63D0B8000CD53C /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
 		AF1932EC1C63D0B8000CD53C /* RegisterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterRequest.h; sourceTree = "<group>"; };
@@ -130,6 +130,12 @@
 		AF1933001C63E80C000CD53C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AF1933011C63E900000CD53C /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		AF1933021C63E900000CD53C /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		AFB4C8161C750D90000D49B0 /* PropertyCross 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PropertyCross 2.xcdatamodel"; sourceTree = "<group>"; };
+		AFB4C8171C750D90000D49B0 /* PropertyCross.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyCross.xcdatamodel; sourceTree = "<group>"; };
+		AFB4C8191C750DA6000D49B0 /* UserData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserData+CoreDataProperties.h"; path = "API/Managers/Models/Requests/UserData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UserData+CoreDataProperties.m"; path = "API/Managers/Models/Requests/UserData+CoreDataProperties.m"; sourceTree = "<group>"; };
+		AFB4C81B1C750DA6000D49B0 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserData.h; path = API/Managers/Models/Requests/UserData.h; sourceTree = "<group>"; };
+		AFB4C81C1C750DA6000D49B0 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserData.m; path = API/Managers/Models/Requests/UserData.m; sourceTree = "<group>"; };
 		AFFF04B61C612E380090DD30 /* PropertyCross.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyCross.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF04BA1C612E380090DD30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFFF04BC1C612E380090DD30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,7 +179,7 @@
 		AF0A0BD41C6D18D200FA6278 /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
-				AF0A0BD51C6D195C00FA6278 /* PropertyCross.xcdatamodeld */,
+				AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */,
 			);
 			name = Coredata;
 			sourceTree = "<group>";
@@ -195,6 +201,10 @@
 				AF13F9B81C73926D0015779F /* Search+CoreDataProperties.m */,
 				AF13F9B91C73926D0015779F /* Search.h */,
 				AF13F9BA1C73926D0015779F /* Search.m */,
+				AFB4C8191C750DA6000D49B0 /* UserData+CoreDataProperties.h */,
+				AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */,
+				AFB4C81B1C750DA6000D49B0 /* UserData.h */,
+				AFB4C81C1C750DA6000D49B0 /* UserData.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -554,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF1932EF1C63D0B8000CD53C /* RegisterRequest.m in Sources */,
+				AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */,
 				AF1933031C63E900000CD53C /* UserDefaults.m in Sources */,
 				AF0D48BD1C6293B7006CBB1D /* SearchResultTableViewCell.m in Sources */,
 				AF0D48B31C627E23006CBB1D /* Comentario.m in Sources */,
@@ -572,9 +583,9 @@
 				AF0D6A681C6BBFBF009ED006 /* PropertyWrapper.swift in Sources */,
 				AF13A0B91C69115B00AE5D7A /* ProfileWrapper.m in Sources */,
 				AFFF04BE1C612E380090DD30 /* AppDelegate.m in Sources */,
+				AFB4C81E1C750DA6000D49B0 /* UserData.m in Sources */,
 				AFFF04BB1C612E380090DD30 /* main.m in Sources */,
 				AF0D48AD1C627CC0006CBB1D /* Foto.m in Sources */,
-				AF0A0BD71C6D195C00FA6278 /* PropertyCross.xcdatamodeld in Sources */,
 				AF0A0BD11C6D108100FA6278 /* CoreDataManager.m in Sources */,
 				AFFF04ED1C614BAF0090DD30 /* Property.m in Sources */,
 				AF0D6A651C6A6CA2009ED006 /* LocationManager.m in Sources */,
@@ -583,6 +594,7 @@
 				AF13F9BC1C73926D0015779F /* Search.m in Sources */,
 				AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */,
 				AF13F9BB1C73926D0015779F /* Search+CoreDataProperties.m in Sources */,
+				AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,13 +742,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AF0A0BD51C6D195C00FA6278 /* PropertyCross.xcdatamodeld */ = {
+		AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AF13F9BE1C73A3890015779F /* PropertyCross 2.xcdatamodel */,
-				AF0A0BD61C6D195C00FA6278 /* PropertyCross.xcdatamodel */,
+				AFB4C8161C750D90000D49B0 /* PropertyCross 2.xcdatamodel */,
+				AFB4C8171C750D90000D49B0 /* PropertyCross.xcdatamodel */,
 			);
-			currentVersion = AF13F9BE1C73A3890015779F /* PropertyCross 2.xcdatamodel */;
+			currentVersion = AFB4C8161C750D90000D49B0 /* PropertyCross 2.xcdatamodel */;
 			name = PropertyCross.xcdatamodeld;
 			path = Resources/PropertyCross.xcdatamodeld;
 			sourceTree = "<group>";

@@ -262,6 +262,32 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibV-R1-R0y">
+                                <rect key="frame" x="485" y="510" width="95" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="EDx-0Z-bz5"/>
+                                    <constraint firstAttribute="width" constant="95" id="iur-zh-MkF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelProfile:" destination="5B4-le-4aS" eventType="primaryActionTriggered" id="Czr-9I-DL4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSJ-yI-tpw">
+                                <rect key="frame" x="366" y="510" width="95" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="RvL-T3-CAu"/>
+                                    <constraint firstAttribute="width" constant="95" id="i5s-Qa-Bcc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveProfile:" destination="5B4-le-4aS" eventType="primaryActionTriggered" id="F46-pB-l1i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -280,10 +306,12 @@
                             <constraint firstItem="Gg7-wp-wN1" firstAttribute="top" secondItem="QMj-pg-UjX" secondAttribute="bottom" constant="8" id="M6a-FB-6Eh"/>
                             <constraint firstItem="qZX-85-asO" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="Ppk-nb-ePJ"/>
                             <constraint firstItem="QMj-pg-UjX" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="QJV-pC-Ydx"/>
+                            <constraint firstItem="pkC-ja-qLm" firstAttribute="top" secondItem="ibV-R1-R0y" secondAttribute="bottom" constant="41" id="UTb-9V-Ir6"/>
                             <constraint firstItem="o2Y-6N-0bf" firstAttribute="top" secondItem="0mi-vt-JuK" secondAttribute="bottom" constant="24" id="XRB-IX-Hwf"/>
                             <constraint firstItem="9pO-lK-McJ" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="ZAR-Fa-Ilg"/>
                             <constraint firstItem="qeE-gg-VaX" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="ZH7-94-5bR"/>
                             <constraint firstItem="qeE-gg-VaX" firstAttribute="top" secondItem="zB1-p6-44Y" secondAttribute="bottom" constant="24" id="Znr-cr-X2c"/>
+                            <constraint firstItem="pkC-ja-qLm" firstAttribute="top" secondItem="aSJ-yI-tpw" secondAttribute="bottom" constant="41" id="aRz-Ps-c8d"/>
                             <constraint firstItem="Gg7-wp-wN1" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="aUa-Uf-40n"/>
                             <constraint firstItem="zB1-p6-44Y" firstAttribute="top" secondItem="IcL-Sc-d5n" secondAttribute="bottom" constant="8" id="bAQ-k0-bmA"/>
                             <constraint firstItem="hZh-NX-Izc" firstAttribute="leading" secondItem="fdx-e1-lm2" secondAttribute="trailing" constant="15" id="fYP-Ge-Id6"/>
@@ -294,15 +322,27 @@
                             <constraint firstItem="lty-V9-74R" firstAttribute="top" secondItem="fkN-fG-b6S" secondAttribute="bottom" constant="8" id="mCz-ya-G8g"/>
                             <constraint firstItem="hZh-NX-Izc" firstAttribute="top" secondItem="qeE-gg-VaX" secondAttribute="bottom" constant="3" id="mrj-EI-eE7"/>
                             <constraint firstItem="fdx-e1-lm2" firstAttribute="top" secondItem="qeE-gg-VaX" secondAttribute="bottom" constant="8" id="rmw-Ii-Cl0"/>
+                            <constraint firstItem="ibV-R1-R0y" firstAttribute="leading" secondItem="aSJ-yI-tpw" secondAttribute="trailing" constant="24" id="s3h-94-UPQ"/>
                             <constraint firstItem="qZX-85-asO" firstAttribute="top" secondItem="fkN-fG-b6S" secondAttribute="bottom" constant="8" id="sgq-XX-HRC"/>
                             <constraint firstItem="0mi-vt-JuK" firstAttribute="top" secondItem="lty-V9-74R" secondAttribute="bottom" constant="8" id="te1-Xe-khm"/>
                             <constraint firstItem="fkN-fG-b6S" firstAttribute="top" secondItem="pSF-zR-dtS" secondAttribute="bottom" constant="8" id="uv3-Cv-oyZ"/>
                             <constraint firstItem="LBh-PJ-zQx" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="vMc-VK-b0k"/>
                             <constraint firstItem="RVX-SE-X9h" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="vOX-YT-TR6"/>
+                            <constraint firstItem="ibV-R1-R0y" firstAttribute="trailing" secondItem="W7A-Bz-ise" secondAttribute="trailingMargin" id="xag-eE-aZx"/>
                             <constraint firstItem="pSF-zR-dtS" firstAttribute="top" secondItem="GzR-SW-fzw" secondAttribute="bottom" constant="8" id="xkR-pI-AYi"/>
                             <constraint firstItem="IcL-Sc-d5n" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="z3m-bQ-i6c"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPassword" destination="0mi-vt-JuK" id="q39-ME-g09"/>
+                        <outlet property="email" destination="zB1-p6-44Y" id="tzX-t2-NJl"/>
+                        <outlet property="lastname" destination="LBh-PJ-zQx" id="JxT-3c-PUF"/>
+                        <outlet property="name" destination="QMj-pg-UjX" id="zLl-XQ-zr5"/>
+                        <outlet property="notification" destination="hZh-NX-Izc" id="aNx-FZ-dIN"/>
+                        <outlet property="password" destination="RVX-SE-X9h" id="2KK-eG-oVq"/>
+                        <outlet property="username" destination="fkN-fG-b6S" id="14l-4q-t2D"/>
+                        <segue destination="eYw-Xm-r1C" kind="show" identifier="goToPropertySearchFromProfile" id="Vqm-93-i3y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EOo-3a-uSN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -661,6 +701,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cKH-MD-OIT"/>
+        <segue reference="Vqm-93-i3y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

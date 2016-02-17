@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "LoginWrapper.h"
 #import "SignupWrapper.h"
+#import "UserData.h"
 
 @implementation LoginViewController
 
@@ -45,22 +46,22 @@
     {
         UIAlertController *alert;
         if (response) {
-            alert = [UIAlertController alertControllerWithTitle:@"Login"
-                                                        message:@"Te has \"logeado\" correctamente."
-                                                 preferredStyle:UIAlertControllerStyleAlert];
+            [UserData storeUsername:self.userName.text andPassword:self.password.text];
             [self.delegate didLogin];
         }
         else {
             alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                         message:@"El login no se ha podido completar."
                                                  preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"ACEPTAR"
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:nil]];
+            [self presentViewController:alert
+                               animated:true
+                             completion:nil];
         }
-        [alert addAction:[UIAlertAction actionWithTitle:@"ACEPTAR"
-                                                  style:UIAlertActionStyleDefault
-                                                handler:nil]];
-        [self presentViewController:alert
-                           animated:true
-                         completion:nil];
+        
     }];
 }
 

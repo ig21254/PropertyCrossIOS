@@ -9,7 +9,16 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="venta" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
+    <entity name="UserData" representedClassName="UserData" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notifications" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Search" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Search" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="UserData" positionX="-63" positionY="36" width="128" height="135"/>
     </elements>
 </model>

@@ -7,6 +7,8 @@
 //
 
 #import "ProfileViewController.h"
+#import "User.h"
+#import "UserData.h"
 
 @interface ProfileViewController ()
 
@@ -16,22 +18,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UserData * user = [UserData getUserInfo];
+    
+    if (user) {
+        self.username.text = user.username;
+        self.password.text = user.password;
+        self.confirmPassword.text = user.password;
+        self.name.text = user.firstname;
+        self.lastname.text = user.lastname;
+        self.email.text = user.email;
+        self.notification.selected = user.notifications;
+    }
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction) saveProfile:(id)sender {
+    User * user = [[User alloc] init];
+    
+    user.nombre = self.name.text;
+    user.apellidos = self.lastname.text;
+    user.email = self.email.text;
+    
+    [UserData storeSearchWithPropertyResponse:user andNotification:[self.notification isEnabled]];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+
+
+- (IBAction)cancelProfile:(id)sender
+{
+    [self dismissViewControllerAnimated:false completion:nil];
+    [self performSegueWithIdentifier:@"goToPropertySearchFromProfile" sender:sender];
+    
+}
+
+
 
 @end
