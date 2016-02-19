@@ -163,10 +163,26 @@ UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteRecentSearch:tableView WithIndex:indexPath];
+        
+    }
+}
+
+- (void) deleteRecentSearch:(UITableView *) tableView WithIndex:(NSIndexPath *) indexPath
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete recent search" message:@"Do you really want to delete this item?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction: [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
         [Search deleteSearch: [self.recentSearches objectAtIndex:indexPath.row]];
         [self.recentSearches removeObjectAtIndex:indexPath.row];
-         [tableView reloadData];
-    }
+        [tableView reloadData];
+    }]];
+    
+    [alert addAction: [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+        [tableView reloadData];
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
