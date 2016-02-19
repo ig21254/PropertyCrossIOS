@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Property.h"
 
-@interface PropertyDescriptionViewController : UITableViewController<
+@interface PropertyDescriptionViewController : UIViewController<
 UITableViewDataSource,
 UITableViewDelegate>
 
@@ -18,5 +19,7 @@ UITableViewDelegate>
 @property (weak) IBOutlet UILabel * price;
 @property (weak) IBOutlet UITextView * propertyDescription;
 @property (weak) IBOutlet UITableView * coments;
+
+@property (strong, nonatomic) Property * property;
 
 @end

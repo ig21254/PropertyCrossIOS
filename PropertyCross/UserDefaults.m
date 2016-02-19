@@ -19,6 +19,7 @@
 + (NSString *) getAccessToken {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token =  [defaults objectForKey:KEY_ACCESS_TOKEN];
+    NSLog(@"Bearer %@", token);
     return token;
 }
 

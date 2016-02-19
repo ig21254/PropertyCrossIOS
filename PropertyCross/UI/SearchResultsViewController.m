@@ -8,6 +8,7 @@
 
 #import "SearchResultsViewController.h"
 #import "SearchResultTableViewCell.h"
+#import "PropertyDescriptionViewController.h"
 #import "Property.h"
 #import "UserDefaults.h"
 #import "PropertyCross-Swift.h"
@@ -27,10 +28,41 @@ UITableViewDelegate>
 @property (strong, nonatomic) NSArray<Property *> * originalProperties;
 @property (strong, nonatomic) NSString * sorting;
 
+@property (readwrite) NSInteger selectedRow;
+
+
 @end
 
 
 @implementation SearchResultsViewController
+
+
+#pragma Initialization
+- (void) viewDidLoad
+{
+    self.sorting = @"NONE";
+}
+
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [SVProgressHUD show];
+    PropertyWrapper * propertyWrapper = [PropertyWrapper sharedInstance];
+    [propertyWrapper searchPropertyWithRequest:[self searchRequest] completionHandler:^(PropertySearchResponse * response) {
+        if (response.criterio == nil) {
+            response.criterio = self.searchRequest;
+        }
+        
+        [Search storeSearchWithPropertyResponse:response];
+        
+        self.originalProperties = [response.datos mutableCopy];
+        self.propiedades = self.originalProperties;
+        [SVProgressHUD dismiss];
+        [self.tableView reloadData];
+    }];
+}
 
 
 #pragma - LoginViewControllerDelegate implementation
@@ -51,6 +83,8 @@ UITableViewDelegate>
     return true;
 }
 
+
+#pragma Commands
 - (void)searchProperty
 {
     
@@ -82,41 +116,6 @@ UITableViewDelegate>
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //NSLog(@"SEGUE = %@", segue.identifier);
-    if ([segue.identifier isEqualToString:@"goToLoginFromSearchResults"]) {
-        if (![UserDefaults getAccessToken]) {
-            LoginViewController *vc = segue.destinationViewController;
-            vc.delegate = self;
-        }
-    }
-}
-
-- (void) viewDidLoad
-{
-    self.sorting = @"NONE";
-}
-
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-    [SVProgressHUD show];
-    PropertyWrapper * propertyWrapper = [PropertyWrapper sharedInstance];
-    [propertyWrapper searchPropertyWithRequest:[self searchRequest] completionHandler:^(PropertySearchResponse * response) {
-        if (response.criterio == nil) {
-            response.criterio = self.searchRequest;
-        }
-        
-        [Search storeSearchWithPropertyResponse:response];
-        
-        self.originalProperties = [response.datos mutableCopy];
-        self.propiedades = self.originalProperties;
-        [SVProgressHUD dismiss];
-        [self.tableView reloadData];
-    }];
-}
 
 - (IBAction)decodeButton:(id)sender {
     
@@ -196,6 +195,35 @@ UITableViewDelegate>
 {
     return 130;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedRow = indexPath.row;
+    
+    if (![UserDefaults getAccessToken]) {
+        [self performSegueWithIdentifier:@"goToLoginFromSearchResults" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"goToDescriptionFromSearch" sender:self];
+    }
+    
+}
+
+
+#pragma SEGUE
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if (![UserDefaults getAccessToken]) {
+        LoginViewController *vc = segue.destinationViewController;
+        vc.delegate = self;
+    } else {
+        if ([segue.identifier isEqualToString:@"goToDescriptionFromSearch"]) {
+            PropertyDescriptionViewController * pdvc = segue.destinationViewController;
+            pdvc.property = [self.propiedades objectAtIndex:self.selectedRow];
+        }
+    }
+}
+
+
 
 
 
