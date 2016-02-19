@@ -12,6 +12,7 @@
 @interface PropertyDescriptionViewController ()
 
 @property (strong, nonatomic) NSMutableArray<Comentario *> * comments;
+@property (strong, nonatomic) NSMutableArray<NSString *> * images;
 
 
 @end
@@ -22,6 +23,8 @@
 - (void) viewDidLoad
 {
     self.comments = [[NSMutableArray alloc] init];
+    self.images = [NSMutableArray arrayWithObjects:@"apartment1.jpg", @"apartment2.jpg", @"apartment3.jpg", @"apartment4.jpg", nil];
+    
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -35,6 +38,8 @@
     if (self.property.comentarios != nil) {
         self.comments = [self.property.comentarios mutableCopy];
     }
+    
+    self.photo.image = [UIImage imageNamed:[self.images objectAtIndex:arc4random_uniform((int)[self.images count])]];
 }
 
 
