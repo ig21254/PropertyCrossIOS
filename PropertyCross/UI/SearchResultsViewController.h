@@ -10,10 +10,15 @@
 #import "LoginViewController.h"
 #import "PropertyRequest.h"
 
-@interface SearchResultsViewController : UIViewController<LoginViewProtocol>
+@interface SearchResultsViewController : UIViewController<
+LoginViewProtocol,
+UITextFieldDelegate>
 
 @property (strong, nonatomic) PropertyRequest * searchRequest;
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
-@property (weak) IBOutlet UISegmentedControl * segmentedControl;
+@property (weak, nonatomic)   IBOutlet UISegmentedControl * segmentedControl;
+@property (weak, nonatomic)   IBOutlet UITextField * searchBar;
+@property (weak, nonatomic)   IBOutlet UILabel * titleBar;
+
 
 @end

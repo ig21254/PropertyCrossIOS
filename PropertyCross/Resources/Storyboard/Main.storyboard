@@ -640,15 +640,32 @@
                                             <action selector="decodeButton:" destination="aEg-6K-TP4" eventType="primaryActionTriggered" id="y7V-T6-z8G"/>
                                         </connections>
                                     </segmentedControl>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1UW-Xu-XXi">
+                                        <rect key="frame" x="8" y="49" width="584" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="5UN-2K-S1l"/>
+                                            <constraint firstAttribute="height" constant="30" id="HSz-CV-7xi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                        <connections>
+                                            <action selector="searchProperty:" destination="eYw-Xm-r1C" eventType="primaryActionTriggered" id="i9q-ob-Izd"/>
+                                            <action selector="searchProperty:" destination="aEg-6K-TP4" eventType="primaryActionTriggered" id="krf-hg-q0r"/>
+                                            <outlet property="delegate" destination="aEg-6K-TP4" id="Vbr-XE-PML"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1UW-Xu-XXi" secondAttribute="trailing" constant="8" id="2oh-lP-9je"/>
                                     <constraint firstAttribute="bottom" secondItem="Lch-3t-Kr5" secondAttribute="bottom" constant="8" id="3e9-Bg-pkM"/>
                                     <constraint firstItem="ClB-zT-OYg" firstAttribute="top" secondItem="Ayi-OE-Nhd" secondAttribute="top" constant="8" id="DOO-ni-yyt"/>
                                     <constraint firstAttribute="height" constant="128" id="HFC-Vv-DHl"/>
                                     <constraint firstAttribute="trailing" secondItem="Lch-3t-Kr5" secondAttribute="trailing" constant="8" id="NjC-TL-XMg"/>
                                     <constraint firstItem="ClB-zT-OYg" firstAttribute="leading" secondItem="Ayi-OE-Nhd" secondAttribute="leading" constant="8" id="Nr5-K1-7PW"/>
+                                    <constraint firstItem="1UW-Xu-XXi" firstAttribute="leading" secondItem="Ayi-OE-Nhd" secondAttribute="leading" constant="8" id="dQ1-B5-jdH"/>
                                     <constraint firstItem="Lch-3t-Kr5" firstAttribute="leading" secondItem="Ayi-OE-Nhd" secondAttribute="leading" constant="8" id="jGq-xJ-Fou"/>
+                                    <constraint firstItem="1UW-Xu-XXi" firstAttribute="top" secondItem="ClB-zT-OYg" secondAttribute="bottom" constant="20" id="lLZ-Tt-Lpc"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-no-ZxI">
@@ -687,8 +704,10 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="1UW-Xu-XXi" id="fCh-fo-p39"/>
                         <outlet property="segmentedControl" destination="Lch-3t-Kr5" id="lYx-nV-GHl"/>
                         <outlet property="tableView" destination="EHB-no-ZxI" id="Vio-e8-d2F"/>
+                        <outlet property="titleBar" destination="ClB-zT-OYg" id="w4a-oz-vT7"/>
                         <segue destination="5B4-le-4aS" kind="presentation" identifier="goToProfileFromSearchResults" id="fwJ-ep-D5A"/>
                         <segue destination="s6r-oh-EpO" kind="presentation" identifier="goToLoginFromSearchResults" id="cKH-MD-OIT"/>
                     </connections>
@@ -737,8 +756,8 @@
         <image name="sort.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6US-z1-GFf"/>
         <segue reference="Vqm-93-i3y"/>
+        <segue reference="cKH-MD-OIT"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

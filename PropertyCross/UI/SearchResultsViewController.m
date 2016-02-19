@@ -32,9 +32,44 @@ UITableViewDelegate>
 
 @implementation SearchResultsViewController
 
+
+#pragma - LoginViewControllerDelegate implementation
 - (void)didLogin {
     [self dismissViewControllerAnimated:false completion:nil];
     [self performSegueWithIdentifier:@"goToProfileFromSearchResults" sender:self];
+}
+
+#pragma mark - UITxtFieldDelegate implementation
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.searchBar) {
+        [self.searchBar resignFirstResponder];
+        [self searchProperty];
+        self.searchBar.text = @"";
+    }
+    return true;
+}
+
+- (void)searchProperty
+{
+    
+    self.searchRequest.query = self.searchBar.text;
+    [SVProgressHUD show];
+    PropertyWrapper * propertyWrapper = [PropertyWrapper sharedInstance];
+    [propertyWrapper searchPropertyWithRequest:[self searchRequest] completionHandler:^(PropertySearchResponse * response) {
+        if (response.criterio == nil) {
+            response.criterio = self.searchRequest;
+        }
+        
+        [Search storeSearchWithPropertyResponse:response];
+        
+        self.originalProperties = [response.datos mutableCopy];
+        self.propiedades = self.originalProperties;
+        [SVProgressHUD dismiss];
+        [self.tableView reloadData];
+    }];
+    
 }
 
 
@@ -116,6 +151,9 @@ UITableViewDelegate>
     
     [self presentViewController:alert animated:YES completion:nil]; // 6
 }
+
+
+
 
 
 #pragma TABLE VIEW
