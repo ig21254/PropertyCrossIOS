@@ -18,7 +18,7 @@
     [request addValue:[NSString stringWithFormat:@"Bearer %@", accessToken] forHTTPHeaderField:@"Authorization"];
     
     
-    NSLog(@"request: %@", request);
+    //NSLog(@"request: %@", request);
     
     [super runRequest:request withCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (error) {
@@ -40,7 +40,7 @@
     [request addValue:[NSString stringWithFormat:@"Bearer %@", accessToken] forHTTPHeaderField:@"Authorization"];
     
     
-    NSLog(@"request: %@", request);
+    //NSLog(@"request: %@", request);
     
     [super runRequest:request withCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (error) {

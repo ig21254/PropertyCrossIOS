@@ -70,9 +70,6 @@
     [fetchRequest setEntity:entity];
     
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    for (UserData * user in fetchedObjects) {
-        NSLog(@"%@", user);
-    }
     
     if ([fetchedObjects count] != 0)
         return fetchedObjects[0];

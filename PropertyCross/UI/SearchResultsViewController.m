@@ -48,7 +48,7 @@ UITableViewDelegate>
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"SEGUE = %@", segue.identifier);
+    //NSLog(@"SEGUE = %@", segue.identifier);
     if ([segue.identifier isEqualToString:@"goToLoginFromSearchResults"]) {
         if (![UserDefaults getAccessToken]) {
             LoginViewController *vc = segue.destinationViewController;
@@ -57,19 +57,24 @@ UITableViewDelegate>
     }
 }
 
+- (void) viewDidLoad
+{
+    self.sorting = @"NONE";
+}
+
+
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    self.sorting = @"NONE";
-    
     [SVProgressHUD show];
     PropertyWrapper * propertyWrapper = [PropertyWrapper sharedInstance];
     [propertyWrapper searchPropertyWithRequest:[self searchRequest] completionHandler:^(PropertySearchResponse * response) {
-        
-        if (response.criterio.query != nil) {
-            [Search storeSearchWithPropertyResponse:response];
+        if (response.criterio == nil) {
+            response.criterio = self.searchRequest;
         }
+        
+        [Search storeSearchWithPropertyResponse:response];
         
         self.originalProperties = [response.datos mutableCopy];
         self.propiedades = self.originalProperties;

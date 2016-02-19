@@ -43,6 +43,8 @@
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
+    //NSLog(@"Recent searches: %@", fetchedObjects);
+    
     return fetchedObjects;
 }
 

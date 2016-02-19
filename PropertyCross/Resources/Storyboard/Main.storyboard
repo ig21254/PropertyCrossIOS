@@ -706,8 +706,8 @@
         <image name="sort.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cKH-MD-OIT"/>
         <segue reference="uws-e7-F08"/>
+        <segue reference="6US-z1-GFf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

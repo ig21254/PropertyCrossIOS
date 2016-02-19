@@ -23,8 +23,8 @@
     
     NSMutableURLRequest *request = [super createRequestForService:@"register/signup" andHttpMethod:@"POST" andModel:registerRequest];
                                     
-    NSLog(@"request: %@", request);
-    NSLog(@"registerRequest: %@", [registerRequest toJSONString]);
+    //NSLog(@"request: %@", request);
+    //NSLog(@"registerRequest: %@", [registerRequest toJSONString]);
     
     [super runRequest:request withCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (error) {

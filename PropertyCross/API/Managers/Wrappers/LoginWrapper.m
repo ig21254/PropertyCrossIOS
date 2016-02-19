@@ -25,8 +25,8 @@ withCompletionHandler:(void (^)(LoginResponse * loginResponse))completionHandler
     
     NSMutableURLRequest *request = [super createRequestForService:@"oauth/token" andHttpMethod:@"POST" andModel:loginRequest];
     
-    NSLog(@"request: %@", request);
-    NSLog(@"loginRequest: %@", [loginRequest toJSONString]);
+    //NSLog(@"request: %@", request);
+    //NSLog(@"loginRequest: %@", [loginRequest toJSONString]);
     
     [super runRequest:request withCompletionHandler:^(NSDictionary *response, NSError *error) {
         if (error) {

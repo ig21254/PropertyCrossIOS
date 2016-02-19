@@ -53,6 +53,7 @@
 		AFB4C8201C751282000D49B0 /* sort@3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB4C81F1C751282000D49B0 /* sort@3.png */; };
 		AFB4C8221C7512A3000D49B0 /* sort@2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB4C8211C7512A3000D49B0 /* sort@2.png */; };
 		AFB4C8241C7512B7000D49B0 /* sort.png in Resources */ = {isa = PBXBuildFile; fileRef = AFB4C8231C7512B7000D49B0 /* sort.png */; };
+		AFE067011C7728B50034B7F9 /* GeocodingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE067001C7728B50034B7F9 /* GeocodingHelper.m */; };
 		AFFF04BB1C612E380090DD30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BA1C612E380090DD30 /* main.m */; };
 		AFFF04BE1C612E380090DD30 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFF04BD1C612E380090DD30 /* AppDelegate.m */; };
 		AFFF04DD1C61301D0090DD30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFFF04DC1C61301D0090DD30 /* Main.storyboard */; };
@@ -142,6 +143,8 @@
 		AFB4C81F1C751282000D49B0 /* sort@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort@3.png"; sourceTree = "<group>"; };
 		AFB4C8211C7512A3000D49B0 /* sort@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sort@2.png"; sourceTree = "<group>"; };
 		AFB4C8231C7512B7000D49B0 /* sort.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sort.png; sourceTree = "<group>"; };
+		AFE066FF1C7728B50034B7F9 /* GeocodingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeocodingHelper.h; sourceTree = "<group>"; };
+		AFE067001C7728B50034B7F9 /* GeocodingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeocodingHelper.m; sourceTree = "<group>"; };
 		AFFF04B61C612E380090DD30 /* PropertyCross.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyCross.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFFF04BA1C612E380090DD30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AFFF04BC1C612E380090DD30 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 		AFFF04D01C612F120090DD30 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AFE066FF1C7728B50034B7F9 /* GeocodingHelper.h */,
+				AFE067001C7728B50034B7F9 /* GeocodingHelper.m */,
 				AF1933011C63E900000CD53C /* UserDefaults.h */,
 				AF1933021C63E900000CD53C /* UserDefaults.m */,
 			);
@@ -583,6 +588,7 @@
 				AF1932F81C63D43B000CD53C /* LoginWrapper.m in Sources */,
 				AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */,
 				AF0D48B91C628F81006CBB1D /* SearchResultsViewController.m in Sources */,
+				AFE067011C7728B50034B7F9 /* GeocodingHelper.m in Sources */,
 				AF1932F41C63D0C6000CD53C /* BaseWrapper.m in Sources */,
 				AF13A0D71C69304C00AE5D7A /* ProfileViewController.m in Sources */,
 				AF1932F51C63D0C6000CD53C /* SignupWrapper.m in Sources */,

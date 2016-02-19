@@ -41,6 +41,7 @@
     user.email = self.email.text;
     
     [UserData storeSearchWithPropertyResponse:user andNotification:[self.notification isEnabled]];
+    [self dismissViewControllerAnimated:false completion:nil];
 }
 
 
