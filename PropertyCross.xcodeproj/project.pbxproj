@@ -47,6 +47,10 @@
 		AF1932FB1C63D62A000CD53C /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FA1C63D62A000CD53C /* LoginRequest.m */; };
 		AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FE1C63E00A000CD53C /* LoginResponse.m */; };
 		AF1933031C63E900000CD53C /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1933021C63E900000CD53C /* UserDefaults.m */; };
+		AF22570F1C775B5B0054049A /* PropertyDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */; };
+		AF2257131C775EE10054049A /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2257121C775EE10054049A /* comment.png */; };
+		AF2257151C775EEB0054049A /* comment@2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2257141C775EEB0054049A /* comment@2.png */; };
+		AF2257171C775EF70054049A /* comment@3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF2257161C775EF70054049A /* comment@3.png */; };
 		AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */; };
 		AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */; };
 		AFB4C81E1C750DA6000D49B0 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81C1C750DA6000D49B0 /* UserData.m */; };
@@ -134,6 +138,11 @@
 		AF1933001C63E80C000CD53C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AF1933011C63E900000CD53C /* UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaults.h; sourceTree = "<group>"; };
 		AF1933021C63E900000CD53C /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
+		AF22570D1C775B5B0054049A /* PropertyDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertyDescriptionViewController.h; path = UI/PropertyDescriptionViewController.h; sourceTree = "<group>"; };
+		AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyDescriptionViewController.m; path = UI/PropertyDescriptionViewController.m; sourceTree = "<group>"; };
+		AF2257121C775EE10054049A /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
+		AF2257141C775EEB0054049A /* comment@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment@2.png"; sourceTree = "<group>"; };
+		AF2257161C775EF70054049A /* comment@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment@3.png"; sourceTree = "<group>"; };
 		AFB4C8161C750D90000D49B0 /* PropertyCross 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PropertyCross 2.xcdatamodel"; sourceTree = "<group>"; };
 		AFB4C8171C750D90000D49B0 /* PropertyCross.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyCross.xcdatamodel; sourceTree = "<group>"; };
 		AFB4C8191C750DA6000D49B0 /* UserData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserData+CoreDataProperties.h"; path = "API/Managers/Models/Requests/UserData+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -332,6 +341,9 @@
 		AFFF04D41C612F450090DD30 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF2257121C775EE10054049A /* comment.png */,
+				AF2257141C775EEB0054049A /* comment@2.png */,
+				AF2257161C775EF70054049A /* comment@3.png */,
 				AFB4C8231C7512B7000D49B0 /* sort.png */,
 				AFB4C8211C7512A3000D49B0 /* sort@2.png */,
 				AFB4C81F1C751282000D49B0 /* sort@3.png */,
@@ -372,6 +384,8 @@
 				AF0D48B81C628F81006CBB1D /* SearchResultsViewController.m */,
 				AF13A0D51C69304C00AE5D7A /* ProfileViewController.h */,
 				AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */,
+				AF22570D1C775B5B0054049A /* PropertyDescriptionViewController.h */,
+				AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -512,11 +526,14 @@
 				AFFF04E11C61306C0090DD30 /* App.xcassets in Resources */,
 				AF13F9B31C738AFF0015779F /* apartment1.jpg in Resources */,
 				AFB4C8221C7512A3000D49B0 /* sort@2.png in Resources */,
+				AF2257171C775EF70054049A /* comment@3.png in Resources */,
 				AF13A0CC1C692A7800AE5D7A /* Star@2.png in Resources */,
 				AF13A0D41C692B5D00AE5D7A /* Profile.png in Resources */,
 				AF13A0D01C692B2D00AE5D7A /* Profile@3.png in Resources */,
 				AF0A0BDB1C6D1C7F00FA6278 /* Location@2.png in Resources */,
 				AF0D48BF1C62940A006CBB1D /* SearchResultTableViewCell.xib in Resources */,
+				AF2257151C775EEB0054049A /* comment@2.png in Resources */,
+				AF2257131C775EE10054049A /* comment.png in Resources */,
 				AF13A0CA1C692A1F00AE5D7A /* Star.png in Resources */,
 				AF13F9B51C738AFF0015779F /* apartment3.jpg in Resources */,
 				AF0A0BDD1C6D1C9000FA6278 /* Location@3.png in Resources */,
@@ -584,6 +601,7 @@
 				AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */,
 				AF1933031C63E900000CD53C /* UserDefaults.m in Sources */,
 				AF0D48BD1C6293B7006CBB1D /* SearchResultTableViewCell.m in Sources */,
+				AF22570F1C775B5B0054049A /* PropertyDescriptionViewController.m in Sources */,
 				AF0D48B31C627E23006CBB1D /* Comentario.m in Sources */,
 				AF1932F81C63D43B000CD53C /* LoginWrapper.m in Sources */,
 				AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */,
