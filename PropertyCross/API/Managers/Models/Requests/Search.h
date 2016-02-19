@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray<Search *> *) getRecentSearches;
 
++ (void) deleteSearch:(Search *) search
+;
+
 @end
 
 NS_ASSUME_NONNULL_END

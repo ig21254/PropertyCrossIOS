@@ -24,7 +24,7 @@ UITableViewDataSource,
 UITableViewDelegate>
 
 @property (strong, nonatomic) id sender;
-@property (strong, nonatomic) NSArray<Search *> * recentSearches;
+@property (strong, nonatomic) NSMutableArray<Search *> * recentSearches;
 @property (strong, nonatomic) PropertyRequest * request;
 
 @end
@@ -37,13 +37,13 @@ UITableViewDelegate>
     [self txtDireccion].tag = TEXT_QUERY_TAG;
     [self btnLocation].tag = LOCATION_BUTTON_TAG;
 
-    self.recentSearches = [Search getRecentSearches];
+    self.recentSearches = [[Search getRecentSearches] mutableCopy];
     self.request = [[PropertyRequest alloc] init];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
-    self.recentSearches = [Search getRecentSearches];
+    self.recentSearches = [[Search getRecentSearches] mutableCopy];
     [self.tableView reloadData];
 }
 
@@ -114,6 +114,7 @@ UITableViewDelegate>
     return [self.recentSearches count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -128,10 +129,12 @@ UITableViewDelegate>
     return cell;
 }
 
+
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44;
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -150,6 +153,20 @@ UITableViewDelegate>
         [self performSegueWithIdentifier:@"searchProperty" sender:self];
     }
     
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [Search deleteSearch: [self.recentSearches objectAtIndex:indexPath.row]];
+        [self.recentSearches removeObjectAtIndex:indexPath.row];
+         [tableView reloadData];
+    }
 }
 
 @end

@@ -48,4 +48,14 @@
     return fetchedObjects;
 }
 
++ (void) deleteSearch:(Search *) search
+{
+    CoreDataManager * coreDataManager = [CoreDataManager sharedInstance];
+    NSManagedObjectContext * context = [coreDataManager managedObjectContext];
+    
+    [context deleteObject:search];
+    
+    [coreDataManager saveContext];
+}
+
 @end
