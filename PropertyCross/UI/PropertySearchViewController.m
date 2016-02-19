@@ -170,15 +170,15 @@ UITableViewDelegate>
 
 - (void) deleteRecentSearch:(UITableView *) tableView WithIndex:(NSIndexPath *) indexPath
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete recent search" message:@"Do you really want to delete this item?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Eliminar búsqueda reciente" message:@"¿Está seguro que quiere eliminar este elemento?" preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction: [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
+    [alert addAction: [UIAlertAction actionWithTitle:@"Eliminar" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
         [Search deleteSearch: [self.recentSearches objectAtIndex:indexPath.row]];
         [self.recentSearches removeObjectAtIndex:indexPath.row];
         [tableView reloadData];
     }]];
     
-    [alert addAction: [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+    [alert addAction: [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
         [tableView reloadData];
     }]];
     

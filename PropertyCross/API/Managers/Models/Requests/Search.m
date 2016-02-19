@@ -38,9 +38,10 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Search" inManagedObjectContext:context];
     
     [fetchRequest setEntity:entity];
-    
+    [fetchRequest setFetchLimit:10];
     NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:false];
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
     NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
     
     //NSLog(@"Recent searches: %@", fetchedObjects);
