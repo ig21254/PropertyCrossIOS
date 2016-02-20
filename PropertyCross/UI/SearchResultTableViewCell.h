@@ -18,6 +18,8 @@
 @property (weak) IBOutlet UILabel * footage;
 @property (weak) IBOutlet UIButton * favorite;
 
+@property (strong, nonatomic) Property * property;
+
 - (void) configureCellWithProperty:(Property *) property;
 
 @end

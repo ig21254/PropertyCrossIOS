@@ -61,7 +61,10 @@
                             <constraint firstAttribute="height" constant="22" id="9go-7r-u15"/>
                             <constraint firstAttribute="width" constant="24" id="IFn-Oo-4JH"/>
                         </constraints>
-                        <state key="normal" title="Button" image="Star.png"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="selectAsFavorite:" destination="Tkl-va-7Vc" eventType="primaryActionTriggered" id="tLg-l7-cNy"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -99,7 +102,4 @@
             <point key="canvasLocation" x="919" y="480.5"/>
         </label>
     </objects>
-    <resources>
-        <image name="Star.png" width="22" height="22"/>
-    </resources>
 </document>

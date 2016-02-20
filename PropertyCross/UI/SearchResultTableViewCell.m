@@ -27,15 +27,29 @@
     self.image.contentMode = UIViewContentModeScaleAspectFit;
     self.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"apartment%d.jpg", arc4random_uniform(4)+1]];
     
+    self.property = property;
+    
+    [self loadFavoriteImage];
+    
+}
+
+- (IBAction)selectAsFavorite:(id)sender {
+    self.property.favorito = [NSNumber numberWithBool:![self.property.favorito boolValue]];
+    
+    [self loadFavoriteImage];
+}
+
+- (void) loadFavoriteImage
+{
     UIImage * image;
-    if ([property.favorito boolValue]) {
+    if ([self.property.favorito boolValue]) {
         image = [UIImage imageNamed:@"starFilled"];
     } else {
         image = [UIImage imageNamed:@"star"];
     }
     [self.favorite setBackgroundImage:image forState:UIControlStateNormal];
-        
-    
 }
+
+
 
 @end
