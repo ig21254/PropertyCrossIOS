@@ -84,7 +84,7 @@ UITableViewDelegate>
 }
 
 
-#pragma Commands
+#pragma COMMANDS
 - (void)searchProperty
 {
     
@@ -130,7 +130,11 @@ UITableViewDelegate>
     [self.tableView reloadData];
 }
 
+#pragma END - COMMANDS
 
+
+
+#pragma SORTING
 - (IBAction)sortPropertyResults:(id)sender
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Sorting Results"
@@ -153,11 +157,6 @@ UITableViewDelegate>
 
 
 
-/*
-#define SORT_BY_PRICE_ASC    @"SORT_BY_PRICE_ASC"
-#define SORT_BY_PRICE_DESC   @"SORT_BY_PRICE_DESC"
-#define SORT_BY_FOOTAGE_ASC  @"SORT_BY_FOOTAGE_ASC"
-#define SORT_BY_FOOTAGE_DESC @"SORT_BY_FOOTAGE_DESC"*/
 - (void) sortResultsWithOrder:(NSString *) order
 {
     NSSortDescriptor * descriptor;
@@ -196,6 +195,8 @@ UITableViewDelegate>
     [self.tableView reloadData];
 }
 
+#pragma END - SORTING
+
 
 
 #pragma TABLE VIEW
@@ -215,20 +216,7 @@ UITableViewDelegate>
 
         Property * property = [self.propiedades objectAtIndex:indexPath.row];
         
-        cell.title.text = property.titulo;
-        
-        if (property.alquiler) {
-            cell.subtitle.text = @"en alquiler";
-        }
-        else {
-            cell.subtitle.text = @"en venta";
-        }
-            
-        cell.price.text = [NSString stringWithFormat:@"%.2f €", property.precio];
-        cell.footage.text = [NSString stringWithFormat:@"%.2f m2", property.metros];
-        
-        cell.image.contentMode = UIViewContentModeScaleAspectFit;
-        cell.image.image = [UIImage imageNamed:[NSString stringWithFormat:@"apartment%d.jpg", arc4random_uniform(4)+1]];
+        [cell configureCellWithProperty:property];
     }
     
     return cell;

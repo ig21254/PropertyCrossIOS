@@ -55,15 +55,25 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBE-aH-FMZ">
+                        <rect key="frame" x="288" y="32" width="24" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="9go-7r-u15"/>
+                            <constraint firstAttribute="width" constant="24" id="IFn-Oo-4JH"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="Star.png"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RS4-eS-Gx2" firstAttribute="leading" secondItem="U1Z-nX-Xp7" secondAttribute="trailing" constant="8" id="Bkj-No-HV6"/>
                     <constraint firstItem="U1Z-nX-Xp7" firstAttribute="top" secondItem="lKS-lH-D0P" secondAttribute="topMargin" id="CDB-yD-uXP"/>
+                    <constraint firstItem="lBE-aH-FMZ" firstAttribute="top" secondItem="2Pw-4Q-u3w" secondAttribute="bottom" constant="3" id="ENn-hH-dOv"/>
                     <constraint firstItem="2Pw-4Q-u3w" firstAttribute="trailing" secondItem="lKS-lH-D0P" secondAttribute="trailingMargin" id="Tvc-Md-t28"/>
                     <constraint firstItem="2Pw-4Q-u3w" firstAttribute="leading" secondItem="U1Z-nX-Xp7" secondAttribute="trailing" constant="8" id="UFp-jy-E6O"/>
                     <constraint firstItem="uBP-KD-Txk" firstAttribute="leading" secondItem="U1Z-nX-Xp7" secondAttribute="trailing" constant="8" id="cdB-a9-2QX"/>
                     <constraint firstItem="Jao-RM-nDO" firstAttribute="leading" secondItem="U1Z-nX-Xp7" secondAttribute="trailing" constant="8" id="dMf-Zv-5mi"/>
                     <constraint firstItem="RS4-eS-Gx2" firstAttribute="top" secondItem="Jao-RM-nDO" secondAttribute="bottom" constant="8" id="kgq-WS-V3G"/>
+                    <constraint firstItem="lBE-aH-FMZ" firstAttribute="trailing" secondItem="lKS-lH-D0P" secondAttribute="trailingMargin" id="mzv-PU-SP5"/>
                     <constraint firstItem="U1Z-nX-Xp7" firstAttribute="leading" secondItem="lKS-lH-D0P" secondAttribute="leadingMargin" id="oTc-CW-BlV"/>
                     <constraint firstItem="uBP-KD-Txk" firstAttribute="top" secondItem="2Pw-4Q-u3w" secondAttribute="bottom" constant="3" id="sRg-ye-PQ6"/>
                     <constraint firstItem="2Pw-4Q-u3w" firstAttribute="top" secondItem="lKS-lH-D0P" secondAttribute="topMargin" id="zXO-NG-0Is"/>
@@ -71,6 +81,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="favorite" destination="lBE-aH-FMZ" id="pUD-72-1OE"/>
                 <outlet property="footage" destination="Jao-RM-nDO" id="G1P-8w-yLe"/>
                 <outlet property="image" destination="U1Z-nX-Xp7" id="sPv-aF-2xY"/>
                 <outlet property="price" destination="RS4-eS-Gx2" id="3rb-Kp-gUB"/>
@@ -88,4 +99,7 @@
             <point key="canvasLocation" x="919" y="480.5"/>
         </label>
     </objects>
+    <resources>
+        <image name="Star.png" width="22" height="22"/>
+    </resources>
 </document>

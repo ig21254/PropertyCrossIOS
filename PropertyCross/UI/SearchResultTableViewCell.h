@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Property.h"
 
 @interface SearchResultTableViewCell : UITableViewCell
 
@@ -15,5 +16,8 @@
 @property (weak) IBOutlet UILabel * subtitle;
 @property (weak) IBOutlet UILabel * price;
 @property (weak) IBOutlet UILabel * footage;
+@property (weak) IBOutlet UIButton * favorite;
+
+- (void) configureCellWithProperty:(Property *) property;
 
 @end

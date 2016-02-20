@@ -27,6 +27,7 @@
                                                        green:(double)167/255
                                                         blue:(double)0/255
                                                        alpha:1]];
+    
     [[UISwitch appearance] setOnTintColor:[UIColor colorWithRed:(double)114/255
                                                           green:(double)167/255
                                                            blue:(double)0/255
