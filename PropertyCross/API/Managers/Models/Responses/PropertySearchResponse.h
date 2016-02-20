@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSArray <Property> * datos;
 @property (strong, nonatomic) NSString<Optional> * page;
 @property (strong, nonatomic) NSNumber<Optional> * pageSize;
-@property (strong, nonatomic) NSString * status;
+@property (strong, nonatomic) NSString<Optional> * status;
 @property (strong, nonatomic) NSNumber<Optional> * total;
 
 

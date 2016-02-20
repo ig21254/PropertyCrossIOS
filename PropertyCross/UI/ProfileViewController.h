@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField * lastname;
 @property (weak, nonatomic) IBOutlet UITextField * email;
 @property (weak, nonatomic) IBOutlet UISwitch * notification;
+@property (weak, nonatomic) IBOutlet UIImageView * photo;
 
 
 @end

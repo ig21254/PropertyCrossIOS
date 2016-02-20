@@ -22,6 +22,8 @@
 		AF0D6A6E1C6BCE0A009ED006 /* PropertySearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D6A6D1C6BCE0A009ED006 /* PropertySearchResponse.m */; };
 		AF1151151C786201000DBDEF /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1151141C786201000DBDEF /* images.xcassets */; };
 		AF11511E1C787DE2000DBDEF /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF11511D1C787DE2000DBDEF /* FavoritesViewController.m */; };
+		AF1151211C7891AB000DBDEF /* CommentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1151201C7891AB000DBDEF /* CommentRequest.m */; };
+		AF1151241C7892CC000DBDEF /* CommentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1151231C7892CC000DBDEF /* CommentResponse.m */; };
 		AF13A0B91C69115B00AE5D7A /* ProfileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0B81C69115B00AE5D7A /* ProfileWrapper.m */; };
 		AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0C11C69245B00AE5D7A /* InfoResponse.m */; };
 		AF13A0D71C69304C00AE5D7A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */; };
@@ -87,6 +89,10 @@
 		AF1151141C786201000DBDEF /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		AF11511C1C787DE2000DBDEF /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = UI/FavoritesViewController.h; sourceTree = "<group>"; };
 		AF11511D1C787DE2000DBDEF /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesViewController.m; path = UI/FavoritesViewController.m; sourceTree = "<group>"; };
+		AF11511F1C7891AB000DBDEF /* CommentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentRequest.h; sourceTree = "<group>"; };
+		AF1151201C7891AB000DBDEF /* CommentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentRequest.m; sourceTree = "<group>"; };
+		AF1151221C7892CC000DBDEF /* CommentResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentResponse.h; path = API/Managers/Models/Responses/CommentResponse.h; sourceTree = "<group>"; };
+		AF1151231C7892CC000DBDEF /* CommentResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentResponse.m; path = API/Managers/Models/Responses/CommentResponse.m; sourceTree = "<group>"; };
 		AF13A0B71C69115B00AE5D7A /* ProfileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileWrapper.h; path = API/Managers/Wrappers/ProfileWrapper.h; sourceTree = "<group>"; };
 		AF13A0B81C69115B00AE5D7A /* ProfileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileWrapper.m; path = API/Managers/Wrappers/ProfileWrapper.m; sourceTree = "<group>"; };
 		AF13A0C01C69245B00AE5D7A /* InfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoResponse.h; path = API/Managers/Models/Responses/InfoResponse.h; sourceTree = "<group>"; };
@@ -213,6 +219,8 @@
 				AF1932FA1C63D62A000CD53C /* LoginRequest.m */,
 				AF0D6A691C6BC4BC009ED006 /* PropertyRequest.h */,
 				AF0D6A6A1C6BC4BC009ED006 /* PropertyRequest.m */,
+				AF11511F1C7891AB000DBDEF /* CommentRequest.h */,
+				AF1151201C7891AB000DBDEF /* CommentRequest.m */,
 			);
 			name = Requests;
 			path = API/Managers/Models/Requests;
@@ -227,6 +235,8 @@
 				AF13A0C11C69245B00AE5D7A /* InfoResponse.m */,
 				AF0D6A6C1C6BCE0A009ED006 /* PropertySearchResponse.h */,
 				AF0D6A6D1C6BCE0A009ED006 /* PropertySearchResponse.m */,
+				AF1151221C7892CC000DBDEF /* CommentResponse.h */,
+				AF1151231C7892CC000DBDEF /* CommentResponse.m */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -343,8 +353,6 @@
 				AF0D48B51C6287F3006CBB1D /* PropertySearchViewController.m */,
 				AF0D48B71C628F81006CBB1D /* SearchResultsViewController.h */,
 				AF0D48B81C628F81006CBB1D /* SearchResultsViewController.m */,
-				AF13A0D51C69304C00AE5D7A /* ProfileViewController.h */,
-				AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */,
 				AF22570D1C775B5B0054049A /* PropertyDescriptionViewController.h */,
 				AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */,
 				AF11511C1C787DE2000DBDEF /* FavoritesViewController.h */,
@@ -406,6 +414,8 @@
 			children = (
 				AFFF04E21C6132C00090DD30 /* LoginViewController.h */,
 				AFFF04E31C6132C00090DD30 /* LoginViewController.m */,
+				AF13A0D51C69304C00AE5D7A /* ProfileViewController.h */,
+				AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */,
 			);
 			name = Authentication;
 			sourceTree = "<group>";
@@ -573,6 +583,7 @@
 				AF0D48AD1C627CC0006CBB1D /* Foto.m in Sources */,
 				AF0A0BD11C6D108100FA6278 /* CoreDataManager.m in Sources */,
 				AFFF04ED1C614BAF0090DD30 /* Property.m in Sources */,
+				AF1151241C7892CC000DBDEF /* CommentResponse.m in Sources */,
 				AF0D6A651C6A6CA2009ED006 /* LocationManager.m in Sources */,
 				AF0D48B01C627D6D006CBB1D /* Notificacion.m in Sources */,
 				AFFF04E41C6132C00090DD30 /* LoginViewController.m in Sources */,
@@ -581,6 +592,7 @@
 				AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */,
 				AF13F9BB1C73926D0015779F /* Search+CoreDataProperties.m in Sources */,
 				AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */,
+				AF1151211C7891AB000DBDEF /* CommentRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

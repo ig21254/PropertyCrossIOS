@@ -10,16 +10,15 @@ import Foundation
 
 class PropertyWrapper: BaseWrapper {
     
+    
+    // PROPERTY MANAGEMENT
     func searchPropertyWithRequest(propertyRequest: PropertyRequest, completionHandler: ((propertySearch: PropertySearchResponse?) -> Void)) {
         let accessToken = UserDefaults.getAccessToken();
         
         let request = super.createRequestForService("propiedad/buscar", andHttpMethod: "POST", andModel: propertyRequest);
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField:"Authorization");
-    
-        //print("REQUEST: \(request)");
         
         super.runRequest(request, withCompletionHandler: { (response, apiError) in
-            //print("RESPONSE: \(response)");
             if ((apiError) != nil) {
                 completionHandler(propertySearch: nil);
             }
@@ -42,10 +41,7 @@ class PropertyWrapper: BaseWrapper {
         let request = super.createRequestForService("propiedad/\(id)", andHttpMethod: "POST", andModel: nil);
         request.addValue("Bearer \(accessToken)", forHTTPHeaderField:"Authorization");
         
-        //print("REQUEST: \(request)");
-        
         super.runRequest(request, withCompletionHandler: { (response, apiError) in
-            //print("RESPONSE: \(response)");
             if ((apiError) != nil) {
                 completionHandler(propertySearch: nil);
             }
@@ -61,7 +57,30 @@ class PropertyWrapper: BaseWrapper {
         })
     }
     
+    func commentPropertyWithRequest(request: CommentRequest, id: NSString, completionHandler: ((commentResponse: CommentResponse?) -> Void)) {
+        let accessToken = UserDefaults.getAccessToken();
+        
+        let request = super.createRequestForService("propiedad/\(id)/comentar", andHttpMethod: "DELETE", andModel: request);
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField:"Authorization");
+        
+        super.runRequest(request, withCompletionHandler: { (response, apiError) in
+            if ((apiError) != nil) {
+                completionHandler(commentResponse: nil);
+            }
+            else {
+                do {
+                    let resp: CommentResponse = try CommentResponse.init(dictionary: response);
+                    completionHandler(commentResponse: resp);
+                } catch {
+                    print("\(error)");
+                    completionHandler(commentResponse: nil);
+                }
+            }
+        })
+    }
     
+    
+    // FAVORITES MANAGEMENT
     func searchFavorites(completionHandler: ((propertySearch: PropertySearchResponse?) -> Void)) {
         let accessToken = UserDefaults.getAccessToken();
         
@@ -83,6 +102,52 @@ class PropertyWrapper: BaseWrapper {
             }
         })
     }
+    
+    func deleteFavorite(id: NSString, completionHandler: ((propertySearch: PropertySearchResponse?) -> Void)) {
+        let accessToken = UserDefaults.getAccessToken();
+    
+        let request = super.createRequestForService("favoritos/\(id)", andHttpMethod: "DELETE", andModel: nil);
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField:"Authorization");
+    
+        super.runRequest(request, withCompletionHandler: { (response, apiError) in
+            if ((apiError) != nil) {
+                completionHandler(propertySearch: nil);
+            }
+            else {
+                do {
+                    let searchResponse: PropertySearchResponse = try PropertySearchResponse.init(dictionary: response);
+                    completionHandler(propertySearch: searchResponse);
+                } catch {
+                    print("\(error)");
+                    completionHandler(propertySearch: nil);
+                }
+            }
+        })
+    }
+    
+    func addFavorite(id: NSString, completionHandler: ((propertySearch: PropertySearchResponse?) -> Void)) {
+        let accessToken = UserDefaults.getAccessToken();
+        
+        let request = super.createRequestForService("favoritos/\(id)", andHttpMethod: "POST", andModel: nil);
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField:"Authorization");
+        
+        super.runRequest(request, withCompletionHandler: { (response, apiError) in
+            if ((apiError) != nil) {
+                completionHandler(propertySearch: nil);
+            }
+            else {
+                do {
+                    let searchResponse: PropertySearchResponse = try PropertySearchResponse.init(dictionary: response);
+                    completionHandler(propertySearch: searchResponse);
+                } catch {
+                    print("\(error)");
+                    completionHandler(propertySearch: nil);
+                }
+            }
+        })
+    }
+    
+    
     
     static let sharedInstance = PropertyWrapper();
 

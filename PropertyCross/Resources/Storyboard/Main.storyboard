@@ -289,12 +289,20 @@
                                     <action selector="cancelProfile:" destination="5B4-le-4aS" eventType="primaryActionTriggered" id="Czr-9I-DL4"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Lnl-DG-Hib">
+                                <rect key="frame" x="329" y="178" width="251" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="pbo-vd-vYH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QMj-pg-UjX" firstAttribute="top" secondItem="9pO-lK-McJ" secondAttribute="bottom" constant="8" id="3I0-fE-nSc"/>
                             <constraint firstItem="o2Y-6N-0bf" firstAttribute="trailing" secondItem="W7A-Bz-ise" secondAttribute="trailingMargin" id="6kB-Qd-qSb"/>
                             <constraint firstItem="fdx-e1-lm2" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="7IX-IN-B35"/>
+                            <constraint firstItem="zB1-p6-44Y" firstAttribute="top" secondItem="Lnl-DG-Hib" secondAttribute="bottom" constant="8" id="94U-YH-wcY"/>
+                            <constraint firstItem="Lnl-DG-Hib" firstAttribute="trailing" secondItem="W7A-Bz-ise" secondAttribute="trailingMargin" id="BXI-RK-cQM"/>
                             <constraint firstItem="zB1-p6-44Y" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="Bom-DV-4j8"/>
                             <constraint firstItem="0mi-vt-JuK" firstAttribute="trailing" secondItem="W7A-Bz-ise" secondAttribute="trailingMargin" id="Ca0-yX-Li8"/>
                             <constraint firstItem="o2Y-6N-0bf" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="Ewr-nW-esu"/>
@@ -322,6 +330,7 @@
                             <constraint firstItem="fkN-fG-b6S" firstAttribute="trailing" secondItem="W7A-Bz-ise" secondAttribute="trailingMargin" id="m9B-F3-Nm5"/>
                             <constraint firstItem="lty-V9-74R" firstAttribute="top" secondItem="fkN-fG-b6S" secondAttribute="bottom" constant="8" id="mCz-ya-G8g"/>
                             <constraint firstItem="hZh-NX-Izc" firstAttribute="top" secondItem="qeE-gg-VaX" secondAttribute="bottom" constant="3" id="mrj-EI-eE7"/>
+                            <constraint firstItem="Lnl-DG-Hib" firstAttribute="top" secondItem="0mi-vt-JuK" secondAttribute="bottom" constant="24" id="rTH-4Q-95y"/>
                             <constraint firstItem="fdx-e1-lm2" firstAttribute="top" secondItem="qeE-gg-VaX" secondAttribute="bottom" constant="8" id="rmw-Ii-Cl0"/>
                             <constraint firstItem="ibV-R1-R0y" firstAttribute="leading" secondItem="aSJ-yI-tpw" secondAttribute="trailing" constant="24" id="s3h-94-UPQ"/>
                             <constraint firstItem="qZX-85-asO" firstAttribute="top" secondItem="fkN-fG-b6S" secondAttribute="bottom" constant="8" id="sgq-XX-HRC"/>
@@ -341,6 +350,7 @@
                         <outlet property="name" destination="QMj-pg-UjX" id="zLl-XQ-zr5"/>
                         <outlet property="notification" destination="hZh-NX-Izc" id="aNx-FZ-dIN"/>
                         <outlet property="password" destination="RVX-SE-X9h" id="2KK-eG-oVq"/>
+                        <outlet property="photo" destination="Lnl-DG-Hib" id="Fy6-EF-bSj"/>
                         <outlet property="username" destination="fkN-fG-b6S" id="14l-4q-t2D"/>
                         <segue destination="eYw-Xm-r1C" kind="show" identifier="goToPropertySearchFromProfile" id="Vqm-93-i3y"/>
                     </connections>
@@ -960,13 +970,14 @@
         <image name="comment" width="22" height="22"/>
         <image name="location" width="22" height="22"/>
         <image name="profile" width="22" height="22"/>
+        <image name="profilePhoto" width="100" height="100"/>
         <image name="sort" width="22" height="22"/>
         <image name="star" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Vqm-93-i3y"/>
         <segue reference="cKH-MD-OIT"/>
-        <segue reference="nou-MA-ppZ"/>
+        <segue reference="wi1-Ga-MLQ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
