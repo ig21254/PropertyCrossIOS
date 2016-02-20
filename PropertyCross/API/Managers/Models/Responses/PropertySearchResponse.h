@@ -13,11 +13,11 @@
 @interface PropertySearchResponse : JSONModel
 
 @property (strong, nonatomic) PropertyRequest<Optional> * criterio;
-@property (strong, nonatomic) NSArray<Property> * datos;
-@property (strong, nonatomic) NSString * page;
-@property (readwrite) int pageSize;
+@property (strong, nonatomic) NSArray <Property> * datos;
+@property (strong, nonatomic) NSString<Optional> * page;
+@property (strong, nonatomic) NSNumber<Optional> * pageSize;
 @property (strong, nonatomic) NSString * status;
-@property (readwrite) int total;
+@property (strong, nonatomic) NSNumber<Optional> * total;
 
 
 @end

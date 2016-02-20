@@ -21,8 +21,7 @@
 		AF0D6A6B1C6BC4BC009ED006 /* PropertyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D6A6A1C6BC4BC009ED006 /* PropertyRequest.m */; };
 		AF0D6A6E1C6BCE0A009ED006 /* PropertySearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0D6A6D1C6BCE0A009ED006 /* PropertySearchResponse.m */; };
 		AF1151151C786201000DBDEF /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1151141C786201000DBDEF /* images.xcassets */; };
-		AF11511A1C786B34000DBDEF /* Favorite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1151171C786B34000DBDEF /* Favorite+CoreDataProperties.m */; };
-		AF11511B1C786B34000DBDEF /* Favorite.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1151191C786B34000DBDEF /* Favorite.m */; };
+		AF11511E1C787DE2000DBDEF /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF11511D1C787DE2000DBDEF /* FavoritesViewController.m */; };
 		AF13A0B91C69115B00AE5D7A /* ProfileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0B81C69115B00AE5D7A /* ProfileWrapper.m */; };
 		AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0C11C69245B00AE5D7A /* InfoResponse.m */; };
 		AF13A0D71C69304C00AE5D7A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */; };
@@ -86,10 +85,8 @@
 		AF0D6A6C1C6BCE0A009ED006 /* PropertySearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertySearchResponse.h; path = API/Managers/Models/Responses/PropertySearchResponse.h; sourceTree = "<group>"; };
 		AF0D6A6D1C6BCE0A009ED006 /* PropertySearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertySearchResponse.m; path = API/Managers/Models/Responses/PropertySearchResponse.m; sourceTree = "<group>"; };
 		AF1151141C786201000DBDEF /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
-		AF1151161C786B34000DBDEF /* Favorite+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Favorite+CoreDataProperties.h"; path = "API/Managers/Models/Requests/Favorite+CoreDataProperties.h"; sourceTree = "<group>"; };
-		AF1151171C786B34000DBDEF /* Favorite+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Favorite+CoreDataProperties.m"; path = "API/Managers/Models/Requests/Favorite+CoreDataProperties.m"; sourceTree = "<group>"; };
-		AF1151181C786B34000DBDEF /* Favorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Favorite.h; path = API/Managers/Models/Requests/Favorite.h; sourceTree = "<group>"; };
-		AF1151191C786B34000DBDEF /* Favorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Favorite.m; path = API/Managers/Models/Requests/Favorite.m; sourceTree = "<group>"; };
+		AF11511C1C787DE2000DBDEF /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = UI/FavoritesViewController.h; sourceTree = "<group>"; };
+		AF11511D1C787DE2000DBDEF /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesViewController.m; path = UI/FavoritesViewController.m; sourceTree = "<group>"; };
 		AF13A0B71C69115B00AE5D7A /* ProfileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileWrapper.h; path = API/Managers/Wrappers/ProfileWrapper.h; sourceTree = "<group>"; };
 		AF13A0B81C69115B00AE5D7A /* ProfileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileWrapper.m; path = API/Managers/Wrappers/ProfileWrapper.m; sourceTree = "<group>"; };
 		AF13A0C01C69245B00AE5D7A /* InfoResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoResponse.h; path = API/Managers/Models/Responses/InfoResponse.h; sourceTree = "<group>"; };
@@ -201,10 +198,6 @@
 				AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */,
 				AFB4C81B1C750DA6000D49B0 /* UserData.h */,
 				AFB4C81C1C750DA6000D49B0 /* UserData.m */,
-				AF1151161C786B34000DBDEF /* Favorite+CoreDataProperties.h */,
-				AF1151171C786B34000DBDEF /* Favorite+CoreDataProperties.m */,
-				AF1151181C786B34000DBDEF /* Favorite.h */,
-				AF1151191C786B34000DBDEF /* Favorite.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -354,6 +347,8 @@
 				AF13A0D61C69304C00AE5D7A /* ProfileViewController.m */,
 				AF22570D1C775B5B0054049A /* PropertyDescriptionViewController.h */,
 				AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */,
+				AF11511C1C787DE2000DBDEF /* FavoritesViewController.h */,
+				AF11511D1C787DE2000DBDEF /* FavoritesViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -554,7 +549,6 @@
 				AF1932EF1C63D0B8000CD53C /* RegisterRequest.m in Sources */,
 				AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */,
 				AF1933031C63E900000CD53C /* UserDefaults.m in Sources */,
-				AF11511A1C786B34000DBDEF /* Favorite+CoreDataProperties.m in Sources */,
 				AF0D48BD1C6293B7006CBB1D /* SearchResultTableViewCell.m in Sources */,
 				AF22570F1C775B5B0054049A /* PropertyDescriptionViewController.m in Sources */,
 				AF0D48B31C627E23006CBB1D /* Comentario.m in Sources */,
@@ -582,9 +576,9 @@
 				AF0D6A651C6A6CA2009ED006 /* LocationManager.m in Sources */,
 				AF0D48B01C627D6D006CBB1D /* Notificacion.m in Sources */,
 				AFFF04E41C6132C00090DD30 /* LoginViewController.m in Sources */,
+				AF11511E1C787DE2000DBDEF /* FavoritesViewController.m in Sources */,
 				AF13F9BC1C73926D0015779F /* Search.m in Sources */,
 				AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */,
-				AF11511B1C786B34000DBDEF /* Favorite.m in Sources */,
 				AF13F9BB1C73926D0015779F /* Search+CoreDataProperties.m in Sources */,
 				AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */,
 			);

@@ -8,7 +8,6 @@
 
 #import "SearchResultTableViewCell.h"
 #import "UserDefaults.h"
-#import "Favorite+CoreDataProperties.h"
 
 @implementation SearchResultTableViewCell
 
@@ -39,11 +38,10 @@
     self.property.favorito = [NSNumber numberWithBool:![self.property.favorito boolValue]];
     
     if ([self.property.favorito boolValue]) {
-        [Favorite storeFavorite:self.property];
+        [Property storeProperty:self.property];
     } else {
-        Favorite * favorite = [[Favorite alloc] init];
-        [favorite initWithProperty:self.property];
-        [Favorite deleteFavorite:favorite];
+        [Property deleteFavorite:self.property];
+        [self.delegate didRemove];
     }
     
     [self loadFavoriteImage];

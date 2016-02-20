@@ -61,6 +61,29 @@ class PropertyWrapper: BaseWrapper {
         })
     }
     
+    
+    func searchFavorites(completionHandler: ((propertySearch: PropertySearchResponse?) -> Void)) {
+        let accessToken = UserDefaults.getAccessToken();
+        
+        let request = super.createRequestForService("favoritos", andHttpMethod: "GET", andModel: nil);
+        request.addValue("Bearer \(accessToken)", forHTTPHeaderField:"Authorization");
+        
+        super.runRequest(request, withCompletionHandler: { (response, apiError) in
+            if ((apiError) != nil) {
+                completionHandler(propertySearch: nil);
+            }
+            else {
+                do {
+                    let searchResponse: PropertySearchResponse = try PropertySearchResponse.init(dictionary: response);
+                    completionHandler(propertySearch: searchResponse);
+                } catch {
+                    print("\(error)");
+                    completionHandler(propertySearch: nil);
+                }
+            }
+        })
+    }
+    
     static let sharedInstance = PropertyWrapper();
 
 }

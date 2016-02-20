@@ -7,6 +7,7 @@
 //
 
 #import <JSONModel/JSONModel.h>
+#import <CoreData/CoreData.h>
 
 @protocol Comentario
 
@@ -34,5 +35,14 @@
 @property (strong, nonatomic) NSString<Optional> * emailPropietario;
 @property (strong, nonatomic) NSString<Optional> * telefonoPropietario;
 
+@property (strong, nonatomic) NSDate<Optional> * timestamp;
+
+
++ (void) storeProperty:(Property * ) property;
++ (void) deleteFavorite:(Property *) property;
++ (NSMutableArray<Property *> *) getFavorites;
+- (void) initEntity:(NSManagedObject *) entity;
+
 
 @end
+

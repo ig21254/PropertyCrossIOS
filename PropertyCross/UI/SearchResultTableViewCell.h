@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "Property.h"
 
+
+@protocol SearchResultTableViewCellProtocol <NSObject>
+
+@required
+- (void) didRemove;
+
+
+@end
+
 @interface SearchResultTableViewCell : UITableViewCell
 
 @property (weak) IBOutlet UIImageView * image;
@@ -19,6 +28,8 @@
 @property (weak) IBOutlet UIButton * favorite;
 
 @property (strong, nonatomic) Property * property;
+
+@property (assign) id<SearchResultTableViewCellProtocol> delegate;
 
 - (void) configureCellWithProperty:(Property *) property;
 

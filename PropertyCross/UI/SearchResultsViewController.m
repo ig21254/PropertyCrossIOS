@@ -59,6 +59,7 @@ UITableViewDelegate>
         
         self.originalProperties = [response.datos mutableCopy];
         self.propiedades = self.originalProperties;
+        self.titleBar.text = self.searchRequest.query;
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
     }];
@@ -113,6 +114,15 @@ UITableViewDelegate>
     }
     else {
         [self performSegueWithIdentifier:@"goToProfileFromSearchResults" sender:self];
+    }
+}
+
+- (IBAction)goToFavorites:(id)sender {
+    if (![UserDefaults getAccessToken]) {
+        [self performSegueWithIdentifier:@"goToLoginFromSearchResults" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"goToFavoritesFromResults" sender:self];
     }
 }
 

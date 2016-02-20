@@ -618,8 +618,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayi-OE-Nhd">
                                 <rect key="frame" x="0.0" y="72" width="600" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barcelona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClB-zT-OYg">
-                                        <rect key="frame" x="8" y="8" width="77" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Query" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClB-zT-OYg">
+                                        <rect key="frame" x="8" y="8" width="47" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="FIC-KA-Wsr"/>
                                         </constraints>
@@ -696,7 +696,11 @@
                                     <action selector="goToProfile:" destination="aEg-6K-TP4" id="SND-S2-hyA"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="star" id="TXj-he-wf5" userLabel="Favorite Bar Button Item"/>
+                            <barButtonItem image="star" id="TXj-he-wf5" userLabel="Favorite Bar Button Item">
+                                <connections>
+                                    <action selector="goToFavorites:" destination="aEg-6K-TP4" id="HUu-zh-uiC"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="sort" id="CgV-2C-L6L">
                                 <connections>
                                     <action selector="sortPropertyResults:" destination="aEg-6K-TP4" id="Xa6-Jd-r2A"/>
@@ -712,11 +716,63 @@
                         <segue destination="5B4-le-4aS" kind="presentation" identifier="goToProfileFromSearchResults" id="fwJ-ep-D5A"/>
                         <segue destination="s6r-oh-EpO" kind="presentation" identifier="goToLoginFromSearchResults" id="cKH-MD-OIT"/>
                         <segue destination="6MU-RG-N2d" kind="show" identifier="goToDescriptionFromSearch" id="wi1-Ga-MLQ"/>
+                        <segue destination="D4Y-x2-9z3" kind="show" identifier="goToFavoritesFromResults" id="YeX-07-NbD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGn-lm-dPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-204" y="1220"/>
+        </scene>
+        <!--Favorites View Controller-->
+        <scene sceneID="Jde-Yy-aKf">
+            <objects>
+                <viewController id="D4Y-x2-9z3" customClass="FavoritesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C3C-9x-Ezu"/>
+                        <viewControllerLayoutGuide type="bottom" id="VKB-gI-Tx2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8cB-Ig-Bwo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bOM-B6-LAC">
+                                <rect key="frame" x="0.0" y="57" width="600" height="543"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="D4Y-x2-9z3" id="vXO-KC-PPE"/>
+                                    <outlet property="delegate" destination="D4Y-x2-9z3" id="ADz-la-d9u"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nom-Ex-DjW">
+                                <rect key="frame" x="20" y="28" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="4kW-xa-sR7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.44705882349999998" green="0.65490196079999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VKB-gI-Tx2" firstAttribute="top" secondItem="bOM-B6-LAC" secondAttribute="bottom" id="LLn-Mm-860"/>
+                            <constraint firstItem="bOM-B6-LAC" firstAttribute="top" secondItem="nom-Ex-DjW" secondAttribute="bottom" constant="8" id="NMW-4y-ZyO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bOM-B6-LAC" secondAttribute="trailing" constant="-20" id="Vrp-qD-7Jx"/>
+                            <constraint firstItem="bOM-B6-LAC" firstAttribute="leading" secondItem="8cB-Ig-Bwo" secondAttribute="leadingMargin" constant="-20" id="hDu-5k-3OY"/>
+                            <constraint firstItem="nom-Ex-DjW" firstAttribute="leading" secondItem="8cB-Ig-Bwo" secondAttribute="leadingMargin" id="nxm-XM-n08"/>
+                            <constraint firstItem="nom-Ex-DjW" firstAttribute="trailing" secondItem="8cB-Ig-Bwo" secondAttribute="trailingMargin" id="tw7-Nk-GLk"/>
+                            <constraint firstItem="nom-Ex-DjW" firstAttribute="top" secondItem="C3C-9x-Ezu" secondAttribute="bottom" constant="8" id="x3d-DK-vVC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favoritesTitle" destination="nom-Ex-DjW" id="TDh-Eo-7Rt"/>
+                        <outlet property="tableView" destination="bOM-B6-LAC" id="KiV-lb-TKi"/>
+                        <segue destination="6MU-RG-N2d" kind="show" identifier="goToDescriptionFromFavorites" id="nou-MA-ppZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1o-W8-axh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="2062"/>
         </scene>
         <!--Descripción-->
         <scene sceneID="Zzo-U9-M0I">
@@ -908,8 +964,9 @@
         <image name="star" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6US-z1-GFf"/>
         <segue reference="Vqm-93-i3y"/>
+        <segue reference="cKH-MD-OIT"/>
+        <segue reference="nou-MA-ppZ"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.44705882352941173" green="0.65490196078431373" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
