@@ -138,20 +138,63 @@ UITableViewDelegate>
                                                             preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"By price"
                                                           style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                                              NSLog(@"You pressed button one");
-                                                          }]; // 2
+                                                              [self sortResultsWithOrder:SORT_BY_PRICE_ASC];
+                                                          }];
     UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"By footage"
                                                            style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-                                                               NSLog(@"You pressed button two");
-                                                           }]; // 3
+                                                               [self sortResultsWithOrder:SORT_BY_FOOTAGE_ASC];
+                                                           }];
     
-    [alert addAction:firstAction]; // 4
-    [alert addAction:secondAction]; // 5
+    [alert addAction:firstAction];
+    [alert addAction:secondAction];
     
-    [self presentViewController:alert animated:YES completion:nil]; // 6
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
+
+/*
+#define SORT_BY_PRICE_ASC    @"SORT_BY_PRICE_ASC"
+#define SORT_BY_PRICE_DESC   @"SORT_BY_PRICE_DESC"
+#define SORT_BY_FOOTAGE_ASC  @"SORT_BY_FOOTAGE_ASC"
+#define SORT_BY_FOOTAGE_DESC @"SORT_BY_FOOTAGE_DESC"*/
+- (void) sortResultsWithOrder:(NSString *) order
+{
+    NSSortDescriptor * descriptor;
+    if ([order isEqualToString:SORT_BY_FOOTAGE_ASC]) {
+        // Order by footage
+        if ([self.sorting isEqualToString:SORT_BY_FOOTAGE_ASC]) {
+            // Order DESCENDING
+            descriptor = [[NSSortDescriptor alloc] initWithKey:@"metros" ascending:NO];
+            self.sorting = SORT_BY_FOOTAGE_DESC;
+            NSLog(@"Sort by footage descending");
+        } else {
+            // Order ASCENDING
+            descriptor = [[NSSortDescriptor alloc] initWithKey:@"metros" ascending:YES];
+            self.sorting = SORT_BY_FOOTAGE_ASC;
+            NSLog(@"Sort by footage ascending");
+        }
+    } else {
+        // Order by price
+        if ([self.sorting isEqualToString:SORT_BY_PRICE_ASC]) {
+            // Order DESCENDING
+            descriptor = [[NSSortDescriptor alloc] initWithKey:@"precio" ascending:NO];
+            self.sorting = SORT_BY_PRICE_DESC;
+            NSLog(@"Sort by price descending");
+        } else {
+            // Order ASCENDING
+            descriptor = [[NSSortDescriptor alloc] initWithKey:@"precio" ascending:YES];
+            self.sorting = SORT_BY_PRICE_ASC;
+            NSLog(@"Sort by price ascending");
+        }
+    }
+    // Sort original data array.
+    NSArray * sortDescriptors = [NSArray arrayWithObjects:descriptor, nil];
+    self.originalProperties = [self.originalProperties sortedArrayUsingDescriptors:sortDescriptors];
+    self.propiedades = [self.propiedades sortedArrayUsingDescriptors:sortDescriptors];
+    
+    [self.tableView reloadData];
+}
 
 
 
