@@ -11,7 +11,6 @@
 
 @implementation UserData
 
-// Insert code here to add functionality to your managed object subclass
 + (void) storeSearchWithPropertyResponse:(User *) user andNotification:(BOOL) notification
 {
     CoreDataManager * coreDataManager = [CoreDataManager sharedInstance];

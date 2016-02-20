@@ -7,6 +7,8 @@
 //
 
 #import "SearchResultTableViewCell.h"
+#import "UserDefaults.h"
+#import "Favorite+CoreDataProperties.h"
 
 @implementation SearchResultTableViewCell
 
@@ -36,18 +38,31 @@
 - (IBAction)selectAsFavorite:(id)sender {
     self.property.favorito = [NSNumber numberWithBool:![self.property.favorito boolValue]];
     
+    if ([self.property.favorito boolValue]) {
+        [Favorite storeFavorite:self.property];
+    } else {
+        Favorite * favorite = [[Favorite alloc] init];
+        [favorite initWithProperty:self.property];
+        [Favorite deleteFavorite:favorite];
+    }
+    
     [self loadFavoriteImage];
 }
 
 - (void) loadFavoriteImage
 {
-    UIImage * image;
-    if ([self.property.favorito boolValue]) {
-        image = [UIImage imageNamed:@"starFilled"];
+    if ([UserDefaults getAccessToken]) {
+        [self.favorite setEnabled:YES];
+        UIImage * image;
+        if ([self.property.favorito boolValue]) {
+            image = [UIImage imageNamed:@"starFilled"];
+        } else {
+            image = [UIImage imageNamed:@"star"];
+        }
+        [self.favorite setBackgroundImage:image forState:UIControlStateNormal];
     } else {
-        image = [UIImage imageNamed:@"star"];
+        [self.favorite setEnabled:NO];
     }
-    [self.favorite setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 
