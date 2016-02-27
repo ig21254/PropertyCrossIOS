@@ -8,6 +8,7 @@
 
 #import "PropertyDescriptionViewController.h"
 #import "Comentario.h"
+#import "UserDefaults.h"
 
 @interface PropertyDescriptionViewController ()
 
@@ -40,11 +41,44 @@
     }
     
     self.photo.image = [UIImage imageNamed:[self.images objectAtIndex:arc4random_uniform((int)[self.images count])]];
+    
+    [self loadFavoriteImage];
 }
 
 
+- (IBAction)selectAsFavorite:(id)sender {
+    self.property.favorito = [NSNumber numberWithBool:![self.property.favorito boolValue]];
+    
+    if ([self.property.favorito boolValue]) {
+        [Property storeProperty:self.property];
+    } else {
+        [Property deleteFavorite:self.property];
+    }
+    
+    [self loadFavoriteImage];
+}
 
-#pragma mark - Table view data source
+- (void) loadFavoriteImage
+{
+    if ([UserDefaults getAccessToken]) {
+        [self.favorite setEnabled:YES];
+        if ([self.property.favorito boolValue]) {
+            self.favorite.image = [UIImage imageNamed:@"starFilledWhite"];
+        } else {
+            self.favorite.image = [UIImage imageNamed:@"star"];
+        }
+    } else {
+        [self.favorite setEnabled:NO];
+    }
+}
+
+- (IBAction)addComment:(id)sender
+{
+    [self performSegueWithIdentifier:@"goToCommentFromDescription" sender:self];
+}
+
+
+#pragma TableView 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.comments count];
 }
@@ -62,14 +96,6 @@
 }
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

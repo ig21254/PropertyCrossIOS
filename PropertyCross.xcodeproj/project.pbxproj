@@ -43,6 +43,7 @@
 		AF1932FF1C63E00A000CD53C /* LoginResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1932FE1C63E00A000CD53C /* LoginResponse.m */; };
 		AF1933031C63E900000CD53C /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1933021C63E900000CD53C /* UserDefaults.m */; };
 		AF22570F1C775B5B0054049A /* PropertyDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */; };
+		AF6F33BC1C81B31800B27BF3 /* AddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F33BB1C81B31800B27BF3 /* AddCommentViewController.m */; };
 		AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */; };
 		AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */; };
 		AFB4C81E1C750DA6000D49B0 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81C1C750DA6000D49B0 /* UserData.m */; };
@@ -127,6 +128,8 @@
 		AF1933021C63E900000CD53C /* UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaults.m; sourceTree = "<group>"; };
 		AF22570D1C775B5B0054049A /* PropertyDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PropertyDescriptionViewController.h; path = UI/PropertyDescriptionViewController.h; sourceTree = "<group>"; };
 		AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyDescriptionViewController.m; path = UI/PropertyDescriptionViewController.m; sourceTree = "<group>"; };
+		AF6F33BA1C81B31800B27BF3 /* AddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommentViewController.h; path = UI/AddCommentViewController.h; sourceTree = "<group>"; };
+		AF6F33BB1C81B31800B27BF3 /* AddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommentViewController.m; path = UI/AddCommentViewController.m; sourceTree = "<group>"; };
 		AFB4C8161C750D90000D49B0 /* PropertyCross 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PropertyCross 2.xcdatamodel"; sourceTree = "<group>"; };
 		AFB4C8171C750D90000D49B0 /* PropertyCross.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyCross.xcdatamodel; sourceTree = "<group>"; };
 		AFB4C8191C750DA6000D49B0 /* UserData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserData+CoreDataProperties.h"; path = "API/Managers/Models/Requests/UserData+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -357,6 +360,8 @@
 				AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */,
 				AF11511C1C787DE2000DBDEF /* FavoritesViewController.h */,
 				AF11511D1C787DE2000DBDEF /* FavoritesViewController.m */,
+				AF6F33BA1C81B31800B27BF3 /* AddCommentViewController.h */,
+				AF6F33BB1C81B31800B27BF3 /* AddCommentViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				AF1932EE1C63D0B8000CD53C /* BaseRequest.m in Sources */,
 				AF1932FB1C63D62A000CD53C /* LoginRequest.m in Sources */,
 				AFFF04F01C614F860090DD30 /* User.m in Sources */,
+				AF6F33BC1C81B31800B27BF3 /* AddCommentViewController.m in Sources */,
 				AF0D6A6E1C6BCE0A009ED006 /* PropertySearchResponse.m in Sources */,
 				AF0D6A681C6BBFBF009ED006 /* PropertyWrapper.swift in Sources */,
 				AF13A0B91C69115B00AE5D7A /* ProfileWrapper.m in Sources */,

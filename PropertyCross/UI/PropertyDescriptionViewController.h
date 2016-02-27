@@ -20,6 +20,8 @@ UITableViewDelegate>
 @property (weak) IBOutlet UITextView * propertyDescription;
 @property (weak) IBOutlet UITableView * coments;
 
+@property (weak) IBOutlet UIBarButtonItem * favorite;
+
 @property (strong, nonatomic) Property * property;
 
 @end
