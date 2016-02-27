@@ -17,7 +17,8 @@
                                                        @"autor": @"autor",
                                                        @"fecha": @"fecha",
                                                        @"texto": @"texto",
-                                                       @"video": @"video"
+                                                       @"video": @"video",
+                                                       @"foto" : @"foto"
                                                        }];
 }
 

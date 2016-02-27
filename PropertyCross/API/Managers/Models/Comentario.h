@@ -14,5 +14,6 @@
 @property (readwrite) long fecha;
 @property (strong, nonatomic) NSString * texto;
 @property (strong, nonatomic) NSString * video;
+@property (strong, nonatomic) NSString<Optional> * foto;
 
 @end

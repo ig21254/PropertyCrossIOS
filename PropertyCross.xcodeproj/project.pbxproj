@@ -44,6 +44,8 @@
 		AF1933031C63E900000CD53C /* UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1933021C63E900000CD53C /* UserDefaults.m */; };
 		AF22570F1C775B5B0054049A /* PropertyDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */; };
 		AF6F33BC1C81B31800B27BF3 /* AddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F33BB1C81B31800B27BF3 /* AddCommentViewController.m */; };
+		AF6F33BE1C81C62800B27BF3 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6F33BD1C81C62800B27BF3 /* CommentTableViewCell.xib */; };
+		AF6F33C11C81C72000B27BF3 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F33C01C81C71F00B27BF3 /* CommentTableViewCell.m */; };
 		AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */; };
 		AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */; };
 		AFB4C81E1C750DA6000D49B0 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81C1C750DA6000D49B0 /* UserData.m */; };
@@ -130,6 +132,9 @@
 		AF22570E1C775B5B0054049A /* PropertyDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PropertyDescriptionViewController.m; path = UI/PropertyDescriptionViewController.m; sourceTree = "<group>"; };
 		AF6F33BA1C81B31800B27BF3 /* AddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommentViewController.h; path = UI/AddCommentViewController.h; sourceTree = "<group>"; };
 		AF6F33BB1C81B31800B27BF3 /* AddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommentViewController.m; path = UI/AddCommentViewController.m; sourceTree = "<group>"; };
+		AF6F33BD1C81C62800B27BF3 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		AF6F33BF1C81C71F00B27BF3 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentTableViewCell.h; path = UI/CommentTableViewCell.h; sourceTree = "<group>"; };
+		AF6F33C01C81C71F00B27BF3 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentTableViewCell.m; path = UI/CommentTableViewCell.m; sourceTree = "<group>"; };
 		AFB4C8161C750D90000D49B0 /* PropertyCross 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PropertyCross 2.xcdatamodel"; sourceTree = "<group>"; };
 		AFB4C8171C750D90000D49B0 /* PropertyCross.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyCross.xcdatamodel; sourceTree = "<group>"; };
 		AFB4C8191C750DA6000D49B0 /* UserData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserData+CoreDataProperties.h"; path = "API/Managers/Models/Requests/UserData+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -192,6 +197,9 @@
 				AF0D48BB1C6293B7006CBB1D /* SearchResultTableViewCell.h */,
 				AF0D48BC1C6293B7006CBB1D /* SearchResultTableViewCell.m */,
 				AF0D48BE1C62940A006CBB1D /* SearchResultTableViewCell.xib */,
+				AF6F33BF1C81C71F00B27BF3 /* CommentTableViewCell.h */,
+				AF6F33C01C81C71F00B27BF3 /* CommentTableViewCell.m */,
+				AF6F33BD1C81C62800B27BF3 /* CommentTableViewCell.xib */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -503,6 +511,7 @@
 				AF1151151C786201000DBDEF /* images.xcassets in Resources */,
 				AF13F9B51C738AFF0015779F /* apartment3.jpg in Resources */,
 				AFFF04E81C6138C60090DD30 /* Splash.storyboard in Resources */,
+				AF6F33BE1C81C62800B27BF3 /* CommentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +586,7 @@
 				AF0D48B61C6287F3006CBB1D /* PropertySearchViewController.m in Sources */,
 				AF0D6A6B1C6BC4BC009ED006 /* PropertyRequest.m in Sources */,
 				AF1932EE1C63D0B8000CD53C /* BaseRequest.m in Sources */,
+				AF6F33C11C81C72000B27BF3 /* CommentTableViewCell.m in Sources */,
 				AF1932FB1C63D62A000CD53C /* LoginRequest.m in Sources */,
 				AFFF04F01C614F860090DD30 /* User.m in Sources */,
 				AF6F33BC1C81B31800B27BF3 /* AddCommentViewController.m in Sources */,

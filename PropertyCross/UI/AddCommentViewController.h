@@ -7,8 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Comentario.h"
 
-@interface AddCommentViewController : UIViewController
+@protocol AddCommentViewProtocol <NSObject>
+
+@required
+- (void) didComment:(Comentario *) comentario WithImage:(UIImage *) photo;
+
+
+@end
+
+
+@interface AddCommentViewController : UIViewController<
+UINavigationControllerDelegate,
+UIImagePickerControllerDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField * username;
@@ -17,5 +29,9 @@
 @property (weak, nonatomic) IBOutlet UIButton * takePhoto;
 @property (weak, nonatomic) IBOutlet UIButton * commentButton;
 @property (weak, nonatomic) IBOutlet UIButton * cancelButton;
+
+@property (nonatomic) UIImagePickerController * imagePickerController;
+
+@property (assign) id<AddCommentViewProtocol> delegate;
 
 @end

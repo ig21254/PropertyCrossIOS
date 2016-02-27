@@ -951,12 +951,13 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="coments" destination="Pe6-OM-gY5" id="cCT-LY-tPO"/>
+                        <outlet property="favorite" destination="fBt-ca-9ei" id="ZKc-Ct-JJN"/>
                         <outlet property="footage" destination="q88-vz-AJ6" id="uAq-f1-86Z"/>
                         <outlet property="photo" destination="VGP-Wj-Scf" id="mFW-hF-Rup"/>
                         <outlet property="price" destination="4XO-R6-WdG" id="UeY-qi-HQ4"/>
                         <outlet property="propertyDescription" destination="ehI-cA-eeH" id="Mdc-le-Agb"/>
                         <outlet property="propertyTitle" destination="fm6-8w-aD0" id="DVn-AQ-Xsn"/>
+                        <outlet property="tableViewComments" destination="Pe6-OM-gY5" id="yjk-rj-EVx"/>
                         <segue destination="aHi-Lx-Dz7" kind="presentation" identifier="goToCommentFromDescription" id="byG-d5-LBb"/>
                     </connections>
                 </viewController>
@@ -1019,6 +1020,14 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IBU-ZZ-g4u">
                                 <rect key="frame" x="20" y="303" width="250" height="250"/>
@@ -1051,6 +1060,9 @@
                                 <state key="normal" title="Comentar">
                                     <color key="titleColor" red="0.44705882349999998" green="0.65490196079999996" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendComment:" destination="aHi-Lx-Dz7" eventType="primaryActionTriggered" id="yPM-ys-6MC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2c-7u-byg">
                                 <rect key="frame" x="481" y="303" width="99" height="30"/>
@@ -1059,6 +1071,9 @@
                                     <constraint firstAttribute="height" constant="30" id="IVy-p0-bqp"/>
                                 </constraints>
                                 <state key="normal" title="Añadir imagen"/>
+                                <connections>
+                                    <action selector="takeAPicture:" destination="aHi-Lx-Dz7" eventType="primaryActionTriggered" id="nsr-Yh-CaR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

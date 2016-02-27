@@ -9,16 +9,41 @@
 #import "PropertyDescriptionViewController.h"
 #import "Comentario.h"
 #import "UserDefaults.h"
+#import "CommentTableViewCell.h"
 
-@interface PropertyDescriptionViewController ()
+@interface EntradaComentario : NSObject
 
-@property (strong, nonatomic) NSMutableArray<Comentario *> * comments;
+@property (strong, nonatomic) Comentario * comentario;
+@property (weak) UIImage * image;
+
+@end
+
+@implementation EntradaComentario
+
+@end
+
+
+@interface PropertyDescriptionViewController ()<
+AddCommentViewProtocol>
+
+@property (strong, nonatomic) NSMutableArray<EntradaComentario *> * comments;
 @property (strong, nonatomic) NSMutableArray<NSString *> * images;
 
 
 @end
 
 @implementation PropertyDescriptionViewController
+
+- (void) didComment:(Comentario *)comentario WithImage:(UIImage *)photo
+{
+    [self dismissViewControllerAnimated:false completion:nil];
+    EntradaComentario * comment = [[EntradaComentario alloc] init];
+    comment.comentario = comentario;
+    comment.image = photo;
+    [self.comments addObject:comment];
+    
+    [self.tableViewComments reloadData];
+}
 
 #pragma Initializations
 - (void) viewDidLoad
@@ -82,19 +107,43 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.comments count];
 }
-
-
-
-
-    # warning TO-DO
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellComment" forIndexPath:indexPath];
-    
-    // Configure the cell...
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CommentTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"CommentTableViewCell"
+                                              owner:self
+                                            options:0] firstObject];
+        
+        EntradaComentario * comment = [self.comments objectAtIndex:indexPath.row];
+        
+        [cell configureCellWithComment:comment.comentario AndPhoto:comment.image];
+    }
     
     return cell;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 400;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+
+{
+    return @"Comments";
+}
+
+
+
+#pragma NAVIGATION
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"goToCommentFromDescription"]) {
+        AddCommentViewController * acvc = segue.destinationViewController;
+        acvc.delegate = self;
+    }
+}
 
 
 

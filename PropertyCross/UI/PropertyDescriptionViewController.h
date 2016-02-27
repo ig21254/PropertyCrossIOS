@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Property.h"
+#import "AddCommentViewController.h"
 
 @interface PropertyDescriptionViewController : UIViewController<
 UITableViewDataSource,
@@ -18,7 +19,7 @@ UITableViewDelegate>
 @property (weak) IBOutlet UILabel * footage;
 @property (weak) IBOutlet UILabel * price;
 @property (weak) IBOutlet UITextView * propertyDescription;
-@property (weak) IBOutlet UITableView * coments;
+@property (weak) IBOutlet UITableView * tableViewComments;
 
 @property (weak) IBOutlet UIBarButtonItem * favorite;
 
