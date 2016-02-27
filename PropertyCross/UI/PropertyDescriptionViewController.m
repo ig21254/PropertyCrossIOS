@@ -131,7 +131,7 @@ AddCommentViewProtocol>
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 
 {
-    return @"Comments";
+    return @"Comentarios";
 }
 
 
