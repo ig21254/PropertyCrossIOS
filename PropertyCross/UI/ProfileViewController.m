@@ -19,6 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.btnFacebookLogin.readPermissions = @[@"public_profile", @"email"];
+    self.btnFacebookLogin.delegate = self;
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
     UserData * user = [UserData getUserInfo];
     
     if (user) {
@@ -30,7 +37,6 @@
         self.email.text = user.email;
         self.notification.selected = user.notifications;
     }
-    
 }
 
 - (IBAction) saveProfile:(id)sender {
@@ -116,11 +122,10 @@
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     NSLog(@"imagePickerController:didFinishPickingMediaWithInfo: %@", info);
-    
-    // Do whatever you want with the given image
+
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     self.photo.image = image;
-    // Remember to close the picker
+
     [picker dismissViewControllerAnimated:true
                                completion:nil];
 }
@@ -128,6 +133,21 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+
+- (void) loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+               error:	(NSError *)error {
+    
+}
+
+
+- (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
+{
+    [UserDefaults storeAccessToken:nil];
+    [self cancelProfile:self];
 }
 
 

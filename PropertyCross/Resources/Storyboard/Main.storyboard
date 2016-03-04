@@ -309,6 +309,16 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TL-sG-PB7" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="200" y="501" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4dW-LE-8nU"/>
+                                </constraints>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -332,12 +342,14 @@
                             <constraint firstItem="Gg7-wp-wN1" firstAttribute="top" secondItem="QMj-pg-UjX" secondAttribute="bottom" constant="8" id="M6a-FB-6Eh"/>
                             <constraint firstItem="qZX-85-asO" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="Ppk-nb-ePJ"/>
                             <constraint firstItem="QMj-pg-UjX" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="QJV-pC-Ydx"/>
+                            <constraint firstItem="9TL-sG-PB7" firstAttribute="centerX" secondItem="W7A-Bz-ise" secondAttribute="centerX" id="Qxr-Mj-QwN"/>
                             <constraint firstItem="pkC-ja-qLm" firstAttribute="top" secondItem="aSJ-yI-tpw" secondAttribute="bottom" constant="20" id="RRv-DA-Xtm"/>
                             <constraint firstItem="Q9G-qZ-fnn" firstAttribute="top" secondItem="o2Y-6N-0bf" secondAttribute="bottom" constant="133" id="STj-nF-d7d"/>
                             <constraint firstItem="o2Y-6N-0bf" firstAttribute="top" secondItem="0mi-vt-JuK" secondAttribute="bottom" constant="24" id="XRB-IX-Hwf"/>
                             <constraint firstItem="9pO-lK-McJ" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="ZAR-Fa-Ilg"/>
                             <constraint firstItem="Gg7-wp-wN1" firstAttribute="leading" secondItem="W7A-Bz-ise" secondAttribute="leadingMargin" id="aUa-Uf-40n"/>
                             <constraint firstItem="fdx-e1-lm2" firstAttribute="top" secondItem="qeE-gg-VaX" secondAttribute="bottom" constant="8" id="b74-uI-4rK"/>
+                            <constraint firstItem="9TL-sG-PB7" firstAttribute="top" secondItem="hZh-NX-Izc" secondAttribute="bottom" constant="3" id="bEy-MD-4xe"/>
                             <constraint firstItem="hZh-NX-Izc" firstAttribute="leading" secondItem="fdx-e1-lm2" secondAttribute="trailing" constant="15" id="csJ-ib-tce"/>
                             <constraint firstItem="LBh-PJ-zQx" firstAttribute="top" secondItem="Gg7-wp-wN1" secondAttribute="bottom" constant="8" id="hyj-92-i8M"/>
                             <constraint firstItem="ibV-R1-R0y" firstAttribute="trailing" secondItem="W7A-Bz-ise" secondAttribute="trailingMargin" id="iRX-Yl-H0X"/>
@@ -361,6 +373,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnFacebookLogin" destination="9TL-sG-PB7" id="7zP-hk-RWr"/>
                         <outlet property="confirmPassword" destination="0mi-vt-JuK" id="q39-ME-g09"/>
                         <outlet property="email" destination="zB1-p6-44Y" id="tzX-t2-NJl"/>
                         <outlet property="lastname" destination="LBh-PJ-zQx" id="JxT-3c-PUF"/>

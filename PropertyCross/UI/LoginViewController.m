@@ -10,6 +10,7 @@
 #import "LoginWrapper.h"
 #import "SignupWrapper.h"
 #import "UserData.h"
+#import "UserDefaults.h"
 
 @implementation LoginViewController
 
@@ -109,12 +110,15 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     if (!error) {
         
-        FBSDKGraphRequest * request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, id, email"}];
+        FBSDKGraphRequest * request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, id, email, picture, first_name, last_name"}];
         [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
             
             if (!error) {
                 NSLog(@"RESULT: %@", result);
-                [UserData storeUsername:[result valueForKey:@"email"]  andName:[result valueForKey:@"name"] andLastName:@"" andEmail:[result valueForKey:@"email"]];
+                [UserData storeUsername:[result valueForKey:@"name"]
+                                andName:[result valueForKey:@"first_name"]
+                            andLastName:[result valueForKey:@"last_name"]
+                               andEmail:[result valueForKey:@"email"]];
                 
                 
                 // As the API doesn't support Facebook Login functionality, we shall login using a "Default" user.
@@ -136,7 +140,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 
 - (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
 {
-
+    [UserDefaults storeAccessToken:nil];
 }
 
 

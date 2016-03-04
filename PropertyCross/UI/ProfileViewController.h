@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "UserDefaults.h"
 
 @interface ProfileViewController : UIViewController <
 UINavigationControllerDelegate,
-UIImagePickerControllerDelegate>
+UIImagePickerControllerDelegate,
+FBSDKLoginButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField * username;
 @property (weak, nonatomic) IBOutlet UITextField * password;
@@ -21,6 +25,8 @@ UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UISwitch * notification;
 @property (weak, nonatomic) IBOutlet UIImageView * photo;
 @property (weak, nonatomic) IBOutlet UIButton * takePhoto;
+
+@property (weak) IBOutlet FBSDKLoginButton *btnFacebookLogin;
 
 @property (nonatomic) UIImagePickerController * imagePickerController;
 

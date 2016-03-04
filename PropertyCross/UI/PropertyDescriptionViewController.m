@@ -71,6 +71,7 @@ AddCommentViewProtocol>
 }
 
 
+
 - (IBAction)selectAsFavorite:(id)sender {
     self.property.favorito = [NSNumber numberWithBool:![self.property.favorito boolValue]];
     
