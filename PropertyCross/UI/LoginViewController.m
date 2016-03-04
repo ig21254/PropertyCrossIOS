@@ -30,6 +30,12 @@
 
 
 #pragma mark - View lifecycle
+- (void) viewDidLoad
+{
+    self.btnFacebookLogin.readPermissions = @[@"public_profile", @"email"];
+    self.btnFacebookLogin.delegate = self;
+}
+
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -90,12 +96,48 @@
     }];
 }
 
-- (IBAction)facebookLoginAction:(id)sender {
-    
-}
 
 - (IBAction)twitterLoginAction:(id)sender {
     
 }
+
+
+- (void) loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+               error:	(NSError *)error {
+    NSLog(@"Logged in!");
+    
+    if (!error) {
+        
+        FBSDKGraphRequest * request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, id, email"}];
+        [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+            
+            if (!error) {
+                NSLog(@"RESULT: %@", result);
+                [UserData storeUsername:[result valueForKey:@"email"]  andName:[result valueForKey:@"name"] andLastName:@"" andEmail:[result valueForKey:@"email"]];
+                
+                
+                // As the API doesn't support Facebook Login functionality, we shall login using a "Default" user.
+                [[LoginWrapper sharedInstance] loginWithUser:@"edu"
+                                                     andPassword:@"edu"
+                                           withCompletionHandler:^(LoginResponse * response)
+                 {
+                     [self.delegate didLogin];
+                 }];
+                
+            }
+        }];
+        
+        
+        
+    }
+    
+}
+
+- (void) loginButtonDidLogOut:(FBSDKLoginButton *)loginButton
+{
+
+}
+
 
 @end

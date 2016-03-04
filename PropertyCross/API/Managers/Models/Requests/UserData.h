@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 // Insert code here to declare functionality of your managed object subclass
 + (void) storeSearchWithPropertyResponse:(User *) user andNotification:(BOOL) notification;
 + (void) storeUsername:(NSString *) username andPassword:(NSString *) password;
++ (void) storeUsername:(NSString *) username
+               andName:(NSString *) name
+           andLastName:(NSString *) lastname
+              andEmail:(NSString *) email;
 + (UserData *) getUserInfo;
 
 @end

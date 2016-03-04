@@ -55,6 +55,26 @@
 }
 
 
++ (void) storeUsername:(NSString *) username
+               andName:(NSString *) name
+           andLastName:(NSString *) lastname
+              andEmail:(NSString *) email
+{
+    CoreDataManager * coreDataManager = [CoreDataManager sharedInstance];
+    NSManagedObjectContext * context = [coreDataManager managedObjectContext];
+    
+    UserData * userData = [NSEntityDescription insertNewObjectForEntityForName:@"UserData" inManagedObjectContext:context];
+    
+    userData.username = username;
+    userData.password = @"";
+    userData.firstname = name;
+    userData.lastname = lastname;
+    userData.email = email;
+    
+    [coreDataManager saveContext];
+}
+
+
 
 
 + (UserData *) getUserInfo

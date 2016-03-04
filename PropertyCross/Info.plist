@@ -20,6 +20,44 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1719565601592476</string>
+	<key>FacebookDisplayName</key>
+	<string>MDPA_PropertyCross</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1719565601592476</string>
+            </array>
+        </dict>
+    </array>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>facebook.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key> <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key> <false/>
+            </dict>
+            <key>fbcdn.net</key>
+            <dict>
+                <key>NSIncludesSubdomains</key> <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>  <false/>
+            </dict>
+            <key>akamaihd.net</key>
+            <dict>
+                <key>NSIncludesSubdomains</key> <true/>
+                <key>NSThirdPartyExceptionRequiresForwardSecrecy</key> <false/>
+            </dict>
+        </dict>
+    </dict>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbauth2</string>
+    </array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -43,9 +81,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSLocationUsageDescription</key>
-    <string>HOLA</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>DESCRIBE WHY DO I WANT TO USE USERS LOCATION</string>
+	<key>NSLocationUsageDescription</key>
+	<string>HOLA</string>
+    
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Buscando tu ubicacion para detectar pisos cercanos</string>
 </dict>
 </plist>
