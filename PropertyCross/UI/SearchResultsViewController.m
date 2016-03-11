@@ -20,15 +20,19 @@
 #define SORT_BY_FOOTAGE_ASC  @"SORT_BY_FOOTAGE_ASC"
 #define SORT_BY_FOOTAGE_DESC @"SORT_BY_FOOTAGE_DESC"
 
+
 @interface SearchResultsViewController () <
 UITableViewDataSource,
-UITableViewDelegate>
+UITableViewDelegate,
+MKMapViewDelegate>
 
 @property (strong, nonatomic) NSArray<Property *> * propiedades;
 @property (strong, nonatomic) NSArray<Property *> * originalProperties;
 @property (strong, nonatomic) NSString * sorting;
 
 @property (readwrite) NSInteger selectedRow;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 
 @end
@@ -267,28 +271,82 @@ UITableViewDelegate>
 }
 
 
-
- #pragma mark InterfaceOrientationMethods
+#pragma mark InterfaceOrientationMethods
 
 
 - (void)setUpViewForOrientation:(UIInterfaceOrientation)orientation
 {
-    [_currentView removeFromSuperview];
+    //[self.currentView removeFromSuperview];
     if(UIInterfaceOrientationIsLandscape(orientation))
     {
-        [self.view addSubview:_landscapeView];
-        _currentView = _landscapeView;
+        self.portraitView.hidden = YES;
+        self.landscapeView.hidden = NO;
+      //  [self.view addSubview:self.landscapeView];
+        self.currentView = self.landscapeView;
     }
     else
     {
-        [self.view addSubview:_portraitView];
-        _currentView = _portraitView;
+        self.landscapeView.hidden = YES;
+        self.portraitView.hidden = NO;
+        //[self.view addSubview:self.portraitView];
+        self.currentView = self.portraitView;
     }
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     [self setUpViewForOrientation:toInterfaceOrientation];
+}
+
+
+#pragma mark - MKMapViewDelegate implementation
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    NSLog(@"MapView region changed!");
+}
+
+- (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
+{
+    NSLog(@"MapView finished loading!");
+    
+    //[self loadSampleAnnotations];
+}
+
+/*- (nullable MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // If the annotation is the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKPinAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"sampleAnnotation"];
+    
+    if(!annotationView) {
+        // Handle any custom annotations.
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
+                                                         reuseIdentifier:@"sampleAnnotation"];
+    }
+    
+    annotationView.canShowCallout = true;
+    if([annotation isKindOfClass:[MySampleAnnotation class]]) {
+        annotationView.pinTintColor = [UIColor orangeColor];
+    }
+    else {
+        annotationView.pinTintColor = [UIColor greenColor];
+    }
+    return annotationView;
+}*/
+
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(10_9, 4_0)
+{
+    NSLog(@"PIN annotation selected");
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    NSLog(@"User location updated: %.6f, %.6f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
+    
+    //self.mapView.centerCoordinate = userLocation.location.coordinate;
 }
 
 

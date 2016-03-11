@@ -15,14 +15,17 @@
 LoginViewProtocol,
 UITextFieldDelegate>
 
+@property (strong, nonatomic) IBOutlet UIView * portraitView;
+@property (strong, nonatomic) IBOutlet UIView * landscapeView;
+@property (strong, nonatomic) UIView * currentView;
+
 @property (strong, nonatomic) PropertyRequest * searchRequest;
 @property (strong, nonatomic) IBOutlet UITableView * tableView;
 @property (weak, nonatomic)   IBOutlet UISegmentedControl * segmentedControl;
 @property (weak, nonatomic)   IBOutlet UITextField * searchBar;
 @property (weak, nonatomic)   IBOutlet UILabel * titleBar;
 
-@property (strong, nonatomic) IBOutlet UIView * portraitView;
-@property (strong, nonatomic) IBOutlet UIView * landscapeView;
-@property (strong, nonatomic) UIView * currentView;
+@property (weak, nonatomic) IBOutlet MKMapView * mapView;
+
 
 @end
