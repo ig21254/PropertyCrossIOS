@@ -47,6 +47,7 @@
 		AF6F33BE1C81C62800B27BF3 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF6F33BD1C81C62800B27BF3 /* CommentTableViewCell.xib */; };
 		AF6F33C11C81C72000B27BF3 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6F33C01C81C71F00B27BF3 /* CommentTableViewCell.m */; };
 		AFA2CFC81C92DF2600CA2DC6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA2CFC71C92DF2600CA2DC6 /* MapKit.framework */; };
+		AFA2CFCB1C92F10900CA2DC6 /* CustomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA2CFCA1C92F10900CA2DC6 /* CustomAnnotation.m */; };
 		AFB4C8181C750D90000D49B0 /* PropertyCross.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C8151C750D90000D49B0 /* PropertyCross.xcdatamodeld */; };
 		AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81A1C750DA6000D49B0 /* UserData+CoreDataProperties.m */; };
 		AFB4C81E1C750DA6000D49B0 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = AFB4C81C1C750DA6000D49B0 /* UserData.m */; };
@@ -137,6 +138,8 @@
 		AF6F33BF1C81C71F00B27BF3 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentTableViewCell.h; path = UI/CommentTableViewCell.h; sourceTree = "<group>"; };
 		AF6F33C01C81C71F00B27BF3 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentTableViewCell.m; path = UI/CommentTableViewCell.m; sourceTree = "<group>"; };
 		AFA2CFC71C92DF2600CA2DC6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AFA2CFC91C92F10900CA2DC6 /* CustomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomAnnotation.h; path = API/Managers/Models/CustomAnnotation.h; sourceTree = "<group>"; };
+		AFA2CFCA1C92F10900CA2DC6 /* CustomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomAnnotation.m; path = API/Managers/Models/CustomAnnotation.m; sourceTree = "<group>"; };
 		AFB4C8161C750D90000D49B0 /* PropertyCross 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PropertyCross 2.xcdatamodel"; sourceTree = "<group>"; };
 		AFB4C8171C750D90000D49B0 /* PropertyCross.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyCross.xcdatamodel; sourceTree = "<group>"; };
 		AFB4C8191C750DA6000D49B0 /* UserData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UserData+CoreDataProperties.h"; path = "API/Managers/Models/Requests/UserData+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -405,6 +408,8 @@
 				AF0D48AF1C627D6D006CBB1D /* Notificacion.m */,
 				AF0D48B11C627E23006CBB1D /* Comentario.h */,
 				AF0D48B21C627E23006CBB1D /* Comentario.m */,
+				AFA2CFC91C92F10900CA2DC6 /* CustomAnnotation.h */,
+				AFA2CFCA1C92F10900CA2DC6 /* CustomAnnotation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				AFFF04E41C6132C00090DD30 /* LoginViewController.m in Sources */,
 				AF11511E1C787DE2000DBDEF /* FavoritesViewController.m in Sources */,
 				AF13F9BC1C73926D0015779F /* Search.m in Sources */,
+				AFA2CFCB1C92F10900CA2DC6 /* CustomAnnotation.m in Sources */,
 				AF13A0C21C69245B00AE5D7A /* InfoResponse.m in Sources */,
 				AF13F9BB1C73926D0015779F /* Search+CoreDataProperties.m in Sources */,
 				AFB4C81D1C750DA6000D49B0 /* UserData+CoreDataProperties.m in Sources */,

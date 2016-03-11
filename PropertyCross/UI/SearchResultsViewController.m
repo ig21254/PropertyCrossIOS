@@ -14,6 +14,8 @@
 #import "PropertyCross-Swift.h"
 #import "SVProgressHUD.h"
 #import "Search.h"
+#import "LocationManager.h"
+#import "CustomAnnotation.h"
 
 #define SORT_BY_PRICE_ASC    @"SORT_BY_PRICE_ASC"
 #define SORT_BY_PRICE_DESC   @"SORT_BY_PRICE_DESC"
@@ -33,6 +35,7 @@ MKMapViewDelegate>
 @property (readwrite) NSInteger selectedRow;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation * currentLocation;
 
 
 @end
@@ -47,6 +50,7 @@ MKMapViewDelegate>
     self.sorting = @"NONE";
     UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
     [self setUpViewForOrientation:interfaceOrientation];
+    [self.mapView setDelegate:self];
 }
 
 
@@ -68,6 +72,15 @@ MKMapViewDelegate>
         self.titleBar.text = self.searchRequest.query;
         [SVProgressHUD dismiss];
         [self.tableView reloadData];
+        [self updateAnotations];
+    }];
+    
+    [[LocationManager sharedInstance] getLocationWithCompetionHandler:^(CLLocation *location) {
+        // For debug purposes -> Location = Barcelona
+        //self.currentLocation = [[CLLocation alloc] initWithLatitude:41.390205 longitude:2.154007];
+        self.currentLocation = location;
+        
+        [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.currentLocation.coordinate, 5000, 5000) animated:true];
     }];
 }
 
@@ -209,6 +222,7 @@ MKMapViewDelegate>
     self.propiedades = [self.propiedades sortedArrayUsingDescriptors:sortDescriptors];
     
     [self.tableView reloadData];
+    [self updateAnotations];
 }
 
 #pragma END - SORTING
@@ -276,19 +290,16 @@ MKMapViewDelegate>
 
 - (void)setUpViewForOrientation:(UIInterfaceOrientation)orientation
 {
-    //[self.currentView removeFromSuperview];
     if(UIInterfaceOrientationIsLandscape(orientation))
     {
         self.portraitView.hidden = YES;
         self.landscapeView.hidden = NO;
-      //  [self.view addSubview:self.landscapeView];
         self.currentView = self.landscapeView;
     }
     else
     {
         self.landscapeView.hidden = YES;
         self.portraitView.hidden = NO;
-        //[self.view addSubview:self.portraitView];
         self.currentView = self.portraitView;
     }
 }
@@ -303,52 +314,85 @@ MKMapViewDelegate>
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    NSLog(@"MapView region changed!");
+
 }
 
 - (void)mapViewDidFinishLoadingMap:(MKMapView *)mapView
 {
-    NSLog(@"MapView finished loading!");
-    
-    //[self loadSampleAnnotations];
+    [self updateAnotations];
 }
 
-/*- (nullable MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+- (nullable MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     // If the annotation is the user location, just return nil.
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     
-    MKPinAnnotationView *annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:@"sampleAnnotation"];
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomAnnotation"];
     
     if(!annotationView) {
         // Handle any custom annotations.
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                                         reuseIdentifier:@"sampleAnnotation"];
+                                                         reuseIdentifier:@"CustomAnnotation"];
+    } else {
+        annotationView.annotation = annotation;
     }
     
     annotationView.canShowCallout = true;
-    if([annotation isKindOfClass:[MySampleAnnotation class]]) {
-        annotationView.pinTintColor = [UIColor orangeColor];
-    }
-    else {
+    
+    BOOL alquiler = ((CustomAnnotation*)annotation).property.alquiler;
+    NSLog(@"ALQUILER: %d", alquiler);
+    if (alquiler) {
+        // A vegades els pinta tots verds (??)
         annotationView.pinTintColor = [UIColor greenColor];
     }
+    
+    UIButton * disclosureButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [disclosureButton addTarget:self
+                         action:@selector(presentMoreInfo)
+               forControlEvents:UIControlEventTouchUpInside];
+    annotationView.rightCalloutAccessoryView = disclosureButton;
+    
     return annotationView;
-}*/
+}
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(10_9, 4_0)
 {
-    NSLog(@"PIN annotation selected");
-}
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    NSLog(@"User location updated: %.6f, %.6f", userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude);
     
-    //self.mapView.centerCoordinate = userLocation.location.coordinate;
+    [self.mapView setCenterCoordinate:(((CustomAnnotation*)view.annotation).coordinate)];
+    
+    
+    self.selectedRow = ((CustomAnnotation*)view.annotation).position;
 }
 
 
+
+- (void) updateAnotations
+{
+    [self.mapView removeAnnotations:[self.mapView annotations]];
+    for (int i=0; i < [self.propiedades count]; ++i) {
+        Property * p = [self.propiedades objectAtIndex:(NSInteger)i];
+        CustomAnnotation * annotation = [[CustomAnnotation alloc] init];
+        [annotation setTitle:p.titulo];
+        [annotation setSubtitle:p.direccion];
+        [annotation setCoordinate:(CLLocationCoordinate2DMake(p.latitud, p.longitud))];
+        annotation.property = p;
+        annotation.position = (NSInteger)i;
+        [self.mapView addAnnotation:annotation];
+    }
+
+}
+
+
+- (void)presentMoreInfo
+{
+    if (![UserDefaults getAccessToken]) {
+        [self performSegueWithIdentifier:@"goToLoginFromSearchResults" sender:self];
+    }
+    else {
+        [self performSegueWithIdentifier:@"goToDescriptionFromSearch" sender:self];
+    }
+    
+}
 
 @end
