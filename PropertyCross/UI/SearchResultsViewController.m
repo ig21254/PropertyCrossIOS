@@ -41,6 +41,8 @@ UITableViewDelegate>
 - (void) viewDidLoad
 {
     self.sorting = @"NONE";
+    UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+    [self setUpViewForOrientation:interfaceOrientation];
 }
 
 
@@ -265,6 +267,29 @@ UITableViewDelegate>
 }
 
 
+
+ #pragma mark InterfaceOrientationMethods
+
+
+- (void)setUpViewForOrientation:(UIInterfaceOrientation)orientation
+{
+    [_currentView removeFromSuperview];
+    if(UIInterfaceOrientationIsLandscape(orientation))
+    {
+        [self.view addSubview:_landscapeView];
+        _currentView = _landscapeView;
+    }
+    else
+    {
+        [self.view addSubview:_portraitView];
+        _currentView = _portraitView;
+    }
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self setUpViewForOrientation:toInterfaceOrientation];
+}
 
 
 
