@@ -20,8 +20,8 @@
                                                                        longitude:longitude]
                           completionHandler:^(NSArray<CLPlacemark *> * placemarks, NSError * error)
     {
-        NSLog(@"placemarks: %@", placemarks);
-        NSLog(@"error: %@", error);
+        //NSLog(@"placemarks: %@", placemarks);
+        //NSLog(@"error: %@", error);
     }];
 }
 

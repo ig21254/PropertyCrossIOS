@@ -341,7 +341,7 @@ MKMapViewDelegate>
     annotationView.canShowCallout = true;
     
     BOOL alquiler = ((CustomAnnotation*)annotation).property.alquiler;
-    NSLog(@"ALQUILER: %d", alquiler);
+    //NSLog(@"ALQUILER: %d", alquiler);
     if (alquiler) {
         // A vegades els pinta tots verds (??)
         annotationView.pinTintColor = [UIColor greenColor];
